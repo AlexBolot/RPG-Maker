@@ -1,6 +1,4 @@
-package model;
-
-
+package TP7;
 /**
  * <!-- begin-user-doc -->
  * <!--  end-user-doc  -->
