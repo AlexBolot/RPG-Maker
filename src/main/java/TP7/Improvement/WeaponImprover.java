@@ -1,25 +1,30 @@
-package TP7;
+package TP7.Improvement;
+
+import TP7.Weapon.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The App	 Class was Coded by :
+ . The WeaponImprover	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 29/01/17 02:04
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-/**
- * Hello world!
- *
- */
-public class App 
+public abstract class WeaponImprover extends Weapon
 {
-    public static void main( String[] args )
+    protected Weapon weapon;
+    
+    protected void setWeapon (Weapon weapon)
     {
-        System.out.println( "Hello World!" );
+        this.weapon = weapon;
     }
+    
+    public abstract float getPower ();
+    
+    public abstract float getProtection ();
 }
+

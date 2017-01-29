@@ -1,9 +1,9 @@
-package TP7;
+package TP7.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The App	 Class was Coded by :
+ . The Dager	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
@@ -12,14 +12,11 @@ package TP7;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class Dager extends Weapon
 {
-    public static void main( String[] args )
+    public Dager ()
     {
-        System.out.println( "Hello World!" );
+        setPower(20);
+        setProtection(10);
     }
 }

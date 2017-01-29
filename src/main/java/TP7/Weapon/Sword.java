@@ -1,9 +1,9 @@
-package TP7;
+package TP7.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The App	 Class was Coded by :
+ . The Sword	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
@@ -12,14 +12,11 @@ package TP7;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class Sword extends Weapon
 {
-    public static void main( String[] args )
+    public Sword ()
     {
-        System.out.println( "Hello World!" );
+        setPower(25);
+        setProtection(5);
     }
 }

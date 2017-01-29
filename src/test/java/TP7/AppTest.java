@@ -4,6 +4,18 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+/*................................................................................................................................
+ . Copyright (c)
+ .
+ . The AppTest	 Class was Coded by :
+ . -> Alexandre BOLOT
+ . -> Christopher SABOYA
+ .
+ . Last Modified : 29/01/17 01:54
+ .
+ . Contact : bolotalex06@gmail.com
+ ...............................................................................................................................*/
+
 /**
  * Unit test for simple App.
  */
