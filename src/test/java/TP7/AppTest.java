@@ -11,40 +11,39 @@ import junit.framework.TestSuite;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 29/01/17 16:43
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 /**
- * Unit test for simple App.
+ Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest extends TestCase
 {
     /**
-     * Create the test case
-     *
-     * @param testName name of the test case
+     Create the test case
+ 
+     @param testName name of the test case
      */
-    public AppTest( String testName )
+    public AppTest (String testName)
     {
-        super( testName );
+        super(testName);
     }
-
+    
     /**
-     * @return the suite of tests being tested
+     @return the suite of tests being tested
      */
-    public static Test suite()
+    public static Test suite ()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite(AppTest.class);
     }
-
+    
     /**
-     * Rigourous Test :-)
+     Rigourous Test :-)
      */
-    public void testApp()
+    public void testApp ()
     {
-        assertTrue( true );
+        assertTrue(true);
     }
 }

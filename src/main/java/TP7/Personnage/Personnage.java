@@ -11,14 +11,14 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 02:04
+ . Last Modified : 29/01/17 16:43
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public abstract class Personnage
 {
-    protected ArrayList<Weapon> weapons;
+    protected ArrayList<Weapon> weapons = new ArrayList<>();
     protected String            name;
     protected float vitality = 100;
     
@@ -79,15 +79,15 @@ public abstract class Personnage
     
     public void Attack (Personnage target)
     {
-        float damageDealt = 0;
-        
-        if(target.getProtection() - getPower() < 0)
+        float damageDealt;
+    
+        if(getPower() - target.getProtection() < 0)
         {
             damageDealt = 0;
         }
         else
         {
-            damageDealt = target.getProtection() - getPower();
+            damageDealt = getPower() - target.getProtection();
         }
         
         target.setVitality(target.getVitality() - damageDealt);

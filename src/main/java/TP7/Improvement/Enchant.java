@@ -9,41 +9,37 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 29/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class Enchant extends WeaponImprover
 {
-    private float powerBonus;
-    private float protectionBonus;
+    private float coeficient;
     
-    public Enchant (Weapon weapon, float powerBonus, float protectionBonus)
+    public Enchant (Weapon weapon, float coeficient)
     {
         setWeapon(weapon);
-        setPowerBonus(powerBonus);
-        setProtectionBonus(protectionBonus);
+        setCoeficient(coeficient);
     }
     
     //region Getters and Setters
-    private void setPowerBonus (float newPowerBonus)
+    private void setCoeficient (float coeficient)
     {
-        powerBonus = newPowerBonus;
+        this.coeficient = coeficient;
     }
-    
-    private void setProtectionBonus (float newProtectionBonus) { protectionBonus = newProtectionBonus;}
     
     @Override
     public float getPower ()
     {
-        return weapon.getPower() * powerBonus;
+        return weapon.getPower() * coeficient;
     }
     
     @Override
     public float getProtection ()
     {
-        return weapon.getProtection() * protectionBonus;
+        return weapon.getProtection() * coeficient;
     }
     //endregion
 }
