@@ -9,7 +9,7 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 02:04
+ . Last Modified : 30/01/17 14:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -26,5 +26,11 @@ public abstract class WeaponImprover extends Weapon
     public abstract float getPower ();
     
     public abstract float getProtection ();
+    
+    public String toString ()
+    {
+        String className = this.getClass().toString().substring(21);
+        return className + " : power = " + getPower() + ", protection = " + getProtection();
+    }
 }
 

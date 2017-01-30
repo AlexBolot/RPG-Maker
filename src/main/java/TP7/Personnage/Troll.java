@@ -9,31 +9,38 @@ import TP7.Weapon.Dager;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 30/01/17 14:20
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class Troll extends Personnage
 {
-    protected String nameBeer;
+    private String favoriteBeer;
     
     public Troll (String Name, String NameBeer)
     {
         setName(Name);
-        setNameBeer(NameBeer);
+        setFavoriteBeer(NameBeer);
         addWeapon(new Dager());
     }
     
     //region Getters and Setters
-    public String getNameBeer ()
+    public String getFavoriteBeer ()
     {
-        return nameBeer;
+        return favoriteBeer;
     }
     
-    public void setNameBeer (String nameBeer)
+    private void setFavoriteBeer (String nameBeer)
     {
-        this.nameBeer = nameBeer;
+        this.favoriteBeer = nameBeer;
     }
     //endregion
+    
+    @Override
+    public String toString ()
+    {
+        return "Troll : \t" + getName() + "\nFavoriteBeer : \t" + getFavoriteBeer() + "\nWeapons : \t" + getWeapons();
+    }
+    
 }

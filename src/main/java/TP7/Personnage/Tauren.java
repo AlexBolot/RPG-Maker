@@ -9,14 +9,14 @@ import TP7.Weapon.Shield;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 30/01/17 14:20
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class Tauren extends Personnage
 {
-    protected float hornSize;
+    private float hornSize;
     
     public Tauren (String Name, float HornSize)
     {
@@ -31,10 +31,16 @@ public class Tauren extends Personnage
         return hornSize;
     }
     
-    public void setHornSize (float hornSize)
+    private void setHornSize (float hornSize)
     {
         this.hornSize = hornSize;
     }
     //endregion
+    
+    @Override
+    public String toString ()
+    {
+        return "Tauren : \t" + getName() + "\nHornSize : \t" + getHornSize() + "\nWeapons : \t" + getWeapons();
+    }
 }
 

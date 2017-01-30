@@ -7,15 +7,15 @@ package TP7.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 30/01/17 14:20
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public abstract class Weapon
 {
-    protected float power;
-    protected float protection;
+    private float power;
+    private float protection;
     
     //region Getters and Setters
     public float getPower ()
@@ -23,7 +23,7 @@ public abstract class Weapon
         return power;
     }
     
-    public void setPower (float power)
+    protected void setPower (float power)
     {
         this.power = power;
     }
@@ -33,9 +33,16 @@ public abstract class Weapon
         return protection;
     }
     
-    public void setProtection (float protection)
+    protected void setProtection (float protection)
     {
         this.protection = protection;
     }
     //endregion
+    
+    @Override
+    public String toString ()
+    {
+        String className = this.getClass().toString().substring(17);
+        return className + " : power = " + getPower() + ", protection = " + getProtection();
+    }
 }

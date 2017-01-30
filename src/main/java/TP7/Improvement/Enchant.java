@@ -9,7 +9,7 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 15:21
+ . Last Modified : 30/01/17 14:20
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -42,4 +42,10 @@ public class Enchant extends WeaponImprover
         return weapon.getProtection() * coeficient;
     }
     //endregion
+    
+    @Override
+    public String toString ()
+    {
+        return weapon.getClass() + " : " + getPower() + " / " + getProtection();
+    }
 }

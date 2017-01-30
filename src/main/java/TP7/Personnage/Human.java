@@ -9,14 +9,14 @@ import TP7.Weapon.Sword;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 01:54
+ . Last Modified : 30/01/17 14:20
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class Human extends Personnage
 {
-    protected String eyeColor;
+    private String eyeColor;
     
     public Human (String Name, String EyeColor)
     {
@@ -31,9 +31,15 @@ public class Human extends Personnage
         return eyeColor;
     }
     
-    public void setEyeColor (String eyeColor)
+    private void setEyeColor (String eyeColor)
     {
         this.eyeColor = eyeColor;
     }
     //endregion
+    
+    @Override
+    public String toString ()
+    {
+        return "Human : \t" + getName() + "\nEyeColor : \t" + getEyeColor() + "\nWeapons : \t" + getWeapons();
+    }
 }

@@ -1,9 +1,11 @@
 package TP7.Weapon;
 
+import org.junit.Test;
+
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Shield	 Class was Coded by :
+ . The WeaponTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
@@ -12,11 +14,17 @@ package TP7.Weapon;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class Shield extends Weapon
+public class WeaponTest
 {
-    public Shield ()
+    @Test
+    public void getPower () throws Exception
     {
-        setPower(5);
-        setProtection(20);
+        
+    }
+    
+    @Test
+    public void getProtection () throws Exception
+    {
+        
     }
 }

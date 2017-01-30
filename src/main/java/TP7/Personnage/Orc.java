@@ -9,14 +9,14 @@ import TP7.Weapon.Sword;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 29/01/17 02:04
+ . Last Modified : 30/01/17 14:20
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class Orc extends Personnage
 {
-    protected float earSize;
+    private float earSize;
     
     public Orc (String Name, float EarSize)
     {
@@ -31,10 +31,16 @@ public class Orc extends Personnage
         return earSize;
     }
     
-    public void setEarSize (float earSize)
+    private void setEarSize (float earSize)
     {
         this.earSize = earSize;
     }
     //endregion
+    
+    @Override
+    public String toString ()
+    {
+        return "Orc : \t" + getName() + "\nEarSize : \t" + getEarSize() + "\nWeapons : \t" + getWeapons();
+    }
 }
 
