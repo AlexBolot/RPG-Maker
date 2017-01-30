@@ -1,24 +1,24 @@
-package TP7.Improvement;
+package TP7.Weapon.Improvement;
 
 import TP7.Weapon.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Buff	 Class was Coded by :
+ . The BuffedWeapon	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 15:16
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class Buff extends WeaponImprover
+public class BuffedWeapon extends WeaponImprover
 {
     private float coeficient;
     
-    public Buff (Weapon weapon, float coeficient)
+    public BuffedWeapon (Weapon weapon, float coeficient)
     {
         setWeapon(weapon);
         setCoeficient(coeficient);

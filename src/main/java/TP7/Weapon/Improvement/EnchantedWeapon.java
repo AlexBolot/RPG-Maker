@@ -1,24 +1,24 @@
-package TP7.Improvement;
+package TP7.Weapon.Improvement;
 
 import TP7.Weapon.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Enchant	 Class was Coded by :
+ . The EnchantedWeapon	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 15:16
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class Enchant extends WeaponImprover
+public class EnchantedWeapon extends WeaponImprover
 {
     private float coeficient;
     
-    public Enchant (Weapon weapon, float coeficient)
+    public EnchantedWeapon (Weapon weapon, float coeficient)
     {
         setWeapon(weapon);
         setCoeficient(coeficient);
@@ -42,10 +42,4 @@ public class Enchant extends WeaponImprover
         return weapon.getProtection() * coeficient;
     }
     //endregion
-    
-    @Override
-    public String toString ()
-    {
-        return weapon.getClass() + " : " + getPower() + " / " + getProtection();
-    }
 }

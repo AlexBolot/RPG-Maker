@@ -1,4 +1,4 @@
-package TP7.Improvement;
+package TP7.Weapon.Improvement;
 
 import TP7.Weapon.Weapon;
 
@@ -9,7 +9,7 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:21
+ . Last Modified : 30/01/17 14:43
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/

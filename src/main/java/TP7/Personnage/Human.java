@@ -1,6 +1,7 @@
 package TP7.Personnage;
 
-import TP7.Weapon.Sword;
+import TP7.Factories.Types.WeaponType;
+import TP7.Factories.WeaponFactory;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -9,11 +10,12 @@ import TP7.Weapon.Sword;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 16:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
+@SuppressWarnings("WeakerAccess")
 public class Human extends Personnage
 {
     private String eyeColor;
@@ -22,7 +24,7 @@ public class Human extends Personnage
     {
         setName(Name);
         setEyeColor(EyeColor);
-        addWeapon(new Sword());
+        addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
     }
     
     //region Getters and Setters

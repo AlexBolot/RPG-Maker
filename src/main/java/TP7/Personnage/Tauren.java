@@ -1,6 +1,7 @@
 package TP7.Personnage;
 
-import TP7.Weapon.Shield;
+import TP7.Factories.Types.WeaponType;
+import TP7.Factories.WeaponFactory;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -9,11 +10,12 @@ import TP7.Weapon.Shield;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 16:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
+@SuppressWarnings("WeakerAccess")
 public class Tauren extends Personnage
 {
     private float hornSize;
@@ -22,7 +24,7 @@ public class Tauren extends Personnage
     {
         setName(Name);
         setHornSize(HornSize);
-        addWeapon(new Shield());
+        addWeapon(new WeaponFactory().createWeapon(WeaponType.SHIELD));
     }
     
     //region Getters and Setters

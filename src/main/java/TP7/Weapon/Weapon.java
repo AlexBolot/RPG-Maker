@@ -7,11 +7,12 @@ package TP7.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 16:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
+@SuppressWarnings("WeakerAccess")
 public abstract class Weapon
 {
     private float power;

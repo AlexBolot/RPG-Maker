@@ -11,11 +11,12 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:21
+ . Last Modified : 30/01/17 16:31
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
+@SuppressWarnings({"WeakerAccess", "SameParameterValue"})
 public abstract class Personnage
 {
     private ArrayList<Weapon> weapons = new ArrayList<>();
@@ -50,11 +51,6 @@ public abstract class Personnage
         return weapons;
     }
     
-    private void setWeapons (ArrayList<Weapon> weapons)
-    {
-        this.weapons = weapons;
-    }
-    
     public String getName ()
     {
         return name;
@@ -78,14 +74,13 @@ public abstract class Personnage
     public float getPower ()
     {
         float tempPower = getWeapons().get(0).getPower() * (getVitality() / 100f);
-    
+        
         return Math.round(tempPower * 10f) / 10f;
     }
     
     public float getProtection ()
     {
         float tempProtection = getWeapons().get(0).getProtection() * (getVitality() / 100f);
-    
         return Math.round(tempProtection * 10f) / 10f;
     }
     //endregion
@@ -93,7 +88,7 @@ public abstract class Personnage
     public void Attack (Personnage target)
     {
         float damageDealt;
-    
+        
         if(getPower() - target.getProtection() < 0)
         {
             damageDealt = 0;
