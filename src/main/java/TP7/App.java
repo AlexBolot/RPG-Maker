@@ -15,7 +15,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 01:07
+ . Last Modified : 31/01/17 01:18
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -35,8 +35,8 @@ public class App
         battalions.add(battalion2);
         battalions.add(battalion3);
     
-        Army army = new Army(battalions);
-        army.addGeneral(general1);
+        Army army = new Army(general1);
+        army.addBattalion(battalions);
     
         System.out.println(army);
     }
