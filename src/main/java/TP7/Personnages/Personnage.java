@@ -1,6 +1,6 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
-import TP7.Weapon.Weapon;
+import TP7.Weapons.Weapon;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:31
+ . Last Modified : 30/01/17 22:39
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -99,6 +99,13 @@ public abstract class Personnage
         }
         
         target.setVitality(target.getVitality() - damageDealt);
+    }
+    
+    @Override
+    public String toString ()
+    {
+        String className = this.getClass().toString().substring(22);
+        return className + " : \t" + getName() + "\tWeapons : \t" + getWeapons();
     }
 }
 

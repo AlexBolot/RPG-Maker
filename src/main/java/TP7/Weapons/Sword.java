@@ -1,22 +1,22 @@
-package TP7.Weapon;
+package TP7.Weapons;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Shield	 Class was Coded by :
+ . The Sword	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class Shield extends Weapon
+public class Sword extends Weapon
 {
-    public Shield ()
+    public Sword ()
     {
-        setPower(5);
-        setProtection(20);
+        setPower(25);
+        setProtection(5);
     }
 }

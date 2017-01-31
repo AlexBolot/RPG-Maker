@@ -2,7 +2,7 @@ package TP7.Factories;
 
 import TP7.Factories.Types.ImprovementType;
 import TP7.Factories.Types.WeaponType;
-import TP7.Weapon.Weapon;
+import TP7.Weapons.Weapon;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:30
+ . Last Modified : 31/01/17 01:03
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -60,5 +60,22 @@ public class WeaponFactoryTest
         
         assertEquals(300, w.getPower(), delta);
         assertEquals(100, w.getProtection(), delta);
+    }
+    
+    @SuppressWarnings("UnusedAssignment")
+    @Test
+    public void NameAndRename () throws Exception
+    {
+        WeaponFactory wf = new WeaponFactory();
+        
+        Weapon weapon = wf.createWeapon(WeaponType.SWORD);
+        
+        weapon = wf.name(weapon, "Ragnarok");
+        
+        assertEquals("Weapon : power = 25.0, protection = 5.0, Name = Ragnarok", weapon.toString());
+        
+        weapon = wf.rename("Ragnarok", "CureDent");
+        
+        assertEquals("Weapon : power = 25.0, protection = 5.0, Name = CureDent", weapon.toString());
     }
 }

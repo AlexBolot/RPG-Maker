@@ -1,4 +1,4 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
@@ -6,43 +6,43 @@ import TP7.Factories.WeaponFactory;
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Orc	 Class was Coded by :
+ . The Tauren	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:21
+ . Last Modified : 30/01/17 22:39
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Orc extends Personnage
+public class Tauren extends Personnage
 {
-    private float earSize;
+    private float hornSize;
     
-    public Orc (String Name, float EarSize)
+    public Tauren (String Name, float HornSize)
     {
         setName(Name);
-        setEarSize(EarSize);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
+        setHornSize(HornSize);
+        addWeapon(new WeaponFactory().createWeapon(WeaponType.SHIELD));
     }
     
     //region Getters and Setters
-    public float getEarSize ()
+    public float getHornSize ()
     {
-        return earSize;
+        return hornSize;
     }
     
-    private void setEarSize (float earSize)
+    private void setHornSize (float hornSize)
     {
-        this.earSize = earSize;
+        this.hornSize = hornSize;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return "Orc : \t" + getName() + "\nEarSize : \t" + getEarSize() + "\nWeapons : \t" + getWeapons();
+        return super.toString() + "\tHornSize : \t" + getHornSize() + "\n";
     }
 }
 

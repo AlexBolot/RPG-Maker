@@ -1,6 +1,6 @@
-package TP7.Weapon.Improvement;
+package TP7.Weapons.Improvements;
 
-import TP7.Weapon.Weapon;
+import TP7.Weapons.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -9,7 +9,7 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 15:16
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/

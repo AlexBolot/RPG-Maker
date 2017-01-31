@@ -1,6 +1,6 @@
-package TP7.Weapon.Improvement;
+package TP7.Weapons.Improvements;
 
-import TP7.Weapon.Weapon;
+import TP7.Weapons.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -9,7 +9,7 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:43
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -29,7 +29,7 @@ public abstract class WeaponImprover extends Weapon
     
     public String toString ()
     {
-        String className = this.getClass().toString().substring(21);
+        String className = this.getClass().toString().substring(29);
         return className + " : power = " + getPower() + ", protection = " + getProtection();
     }
 }

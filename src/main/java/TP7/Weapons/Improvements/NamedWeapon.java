@@ -1,6 +1,6 @@
-package TP7.Weapon.Improvement;
+package TP7.Weapons.Improvements;
 
-import TP7.Weapon.Weapon;
+import TP7.Weapons.Weapon;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -9,7 +9,7 @@ import TP7.Weapon.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:21
+ . Last Modified : 31/01/17 01:03
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -53,6 +53,6 @@ public class NamedWeapon extends WeaponImprover
     @Override
     public String toString ()
     {
-        return super.toString() + " / Name = " + getWeaponName();
+        return (super.toString() + ", Name = " + getWeaponName()).substring(7);
     }
 }

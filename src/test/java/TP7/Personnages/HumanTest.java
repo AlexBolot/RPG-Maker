@@ -1,4 +1,4 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 31/01/17 00:57
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -36,7 +36,7 @@ public class HumanTest
     @Test
     public void ToString () throws Exception
     {
-        assertEquals("Human : \tRadcliffe\n" + "EyeColor : \tBleu\n" + "Weapons : \t[Sword : power = 25.0, protection = 5.0]",
+        assertEquals("Human : \tRadcliffe\tWeapons : \t[word : power = 25.0, protection = 5.0]\tEyeColor : \tBleu\n",
                      human.toString());
     }
 }

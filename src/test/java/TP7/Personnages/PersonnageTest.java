@@ -1,6 +1,6 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
-import TP7.Weapon.Shield;
+import TP7.Weapons.Shield;
 import org.junit.Test;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:21
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -62,7 +62,7 @@ public class PersonnageTest
     {
         //TODO
         /*human.addWeapon(new Shield());
-        ArrayList<Weapon> listCompare = new ArrayList<>();
+        ArrayList<Weapons> listCompare = new ArrayList<>();
         listCompare.add(new Sword());
         listCompare.add(new Shield());
         

@@ -2,13 +2,13 @@ package TP7.Factories;
 
 import TP7.Factories.Types.ImprovementType;
 import TP7.Factories.Types.WeaponType;
-import TP7.Weapon.Dager;
-import TP7.Weapon.Improvement.BuffedWeapon;
-import TP7.Weapon.Improvement.EnchantedWeapon;
-import TP7.Weapon.Improvement.NamedWeapon;
-import TP7.Weapon.Shield;
-import TP7.Weapon.Sword;
-import TP7.Weapon.Weapon;
+import TP7.Weapons.Dager;
+import TP7.Weapons.Improvements.BuffedWeapon;
+import TP7.Weapons.Improvements.EnchantedWeapon;
+import TP7.Weapons.Improvements.NamedWeapon;
+import TP7.Weapons.Shield;
+import TP7.Weapons.Sword;
+import TP7.Weapons.Weapon;
 
 import java.util.HashMap;
 
@@ -19,7 +19,7 @@ import java.util.HashMap;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:31
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/

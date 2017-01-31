@@ -1,4 +1,4 @@
-package TP7.Weapon;
+package TP7.Weapons;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -7,7 +7,7 @@ package TP7.Weapon;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:21
+ . Last Modified : 31/01/17 00:56
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -43,7 +43,7 @@ public abstract class Weapon
     @Override
     public String toString ()
     {
-        String className = this.getClass().toString().substring(17);
+        String className = this.getClass().toString().substring(19);
         return className + " : power = " + getPower() + ", protection = " + getProtection();
     }
 }

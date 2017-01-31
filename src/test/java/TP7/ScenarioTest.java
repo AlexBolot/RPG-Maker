@@ -1,11 +1,11 @@
 package TP7;
 
-import TP7.Personnage.Orc;
-import TP7.Personnage.Tauren;
-import TP7.Personnage.Troll;
-import TP7.Weapon.Improvement.BuffedWeapon;
-import TP7.Weapon.Improvement.EnchantedWeapon;
-import TP7.Weapon.Weapon;
+import TP7.Personnages.Orc;
+import TP7.Personnages.Tauren;
+import TP7.Personnages.Troll;
+import TP7.Weapons.Improvements.BuffedWeapon;
+import TP7.Weapons.Improvements.EnchantedWeapon;
+import TP7.Weapons.Weapon;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:31
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/

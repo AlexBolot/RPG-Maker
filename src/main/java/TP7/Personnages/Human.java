@@ -1,4 +1,4 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
@@ -6,43 +6,42 @@ import TP7.Factories.WeaponFactory;
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Troll	 Class was Coded by :
+ . The Human	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:21
+ . Last Modified : 30/01/17 22:39
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Troll extends Personnage
+public class Human extends Personnage
 {
-    private String favoriteBeer;
+    private String eyeColor;
     
-    public Troll (String Name, String NameBeer)
+    public Human (String Name, String EyeColor)
     {
         setName(Name);
-        setFavoriteBeer(NameBeer);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.DAGER));
+        setEyeColor(EyeColor);
+        addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
     }
     
     //region Getters and Setters
-    public String getFavoriteBeer ()
+    public String getEyeColor ()
     {
-        return favoriteBeer;
+        return eyeColor;
     }
     
-    private void setFavoriteBeer (String nameBeer)
+    private void setEyeColor (String eyeColor)
     {
-        this.favoriteBeer = nameBeer;
+        this.eyeColor = eyeColor;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return "Troll : \t" + getName() + "\nFavoriteBeer : \t" + getFavoriteBeer() + "\nWeapons : \t" + getWeapons();
+        return super.toString() + "\tEyeColor : \t" + getEyeColor() + "\n";
     }
-    
 }

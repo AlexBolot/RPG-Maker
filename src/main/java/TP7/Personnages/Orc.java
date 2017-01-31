@@ -1,4 +1,4 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
@@ -6,42 +6,43 @@ import TP7.Factories.WeaponFactory;
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Human	 Class was Coded by :
+ . The Orc	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:21
+ . Last Modified : 30/01/17 22:39
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Human extends Personnage
+public class Orc extends Personnage
 {
-    private String eyeColor;
+    private float earSize;
     
-    public Human (String Name, String EyeColor)
+    public Orc (String Name, float EarSize)
     {
         setName(Name);
-        setEyeColor(EyeColor);
+        setEarSize(EarSize);
         addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
     }
     
     //region Getters and Setters
-    public String getEyeColor ()
+    public float getEarSize ()
     {
-        return eyeColor;
+        return earSize;
     }
     
-    private void setEyeColor (String eyeColor)
+    private void setEarSize (float earSize)
     {
-        this.eyeColor = eyeColor;
+        this.earSize = earSize;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return "Human : \t" + getName() + "\nEyeColor : \t" + getEyeColor() + "\nWeapons : \t" + getWeapons();
+        return super.toString() + "\tEarSize : \t" + getEarSize() + "\n";
     }
 }
+

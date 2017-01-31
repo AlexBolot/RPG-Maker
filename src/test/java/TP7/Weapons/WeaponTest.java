@@ -1,22 +1,30 @@
-package TP7.Weapon;
+package TP7.Weapons;
+
+import org.junit.Test;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Sword	 Class was Coded by :
+ . The WeaponTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 14:20
+ . Last Modified : 30/01/17 21:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class Sword extends Weapon
+public class WeaponTest
 {
-    public Sword ()
+    @Test
+    public void getPower () throws Exception
     {
-        setPower(25);
-        setProtection(5);
+        
+    }
+    
+    @Test
+    public void getProtection () throws Exception
+    {
+        
     }
 }

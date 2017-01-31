@@ -1,4 +1,4 @@
-package TP7.Personnage;
+package TP7.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
@@ -6,43 +6,43 @@ import TP7.Factories.WeaponFactory;
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Tauren	 Class was Coded by :
+ . The Troll	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 16:21
+ . Last Modified : 30/01/17 22:39
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Tauren extends Personnage
+public class Troll extends Personnage
 {
-    private float hornSize;
+    private String favoriteBeer;
     
-    public Tauren (String Name, float HornSize)
+    public Troll (String Name, String NameBeer)
     {
         setName(Name);
-        setHornSize(HornSize);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.SHIELD));
+        setFavoriteBeer(NameBeer);
+        addWeapon(new WeaponFactory().createWeapon(WeaponType.DAGER));
     }
     
     //region Getters and Setters
-    public float getHornSize ()
+    public String getFavoriteBeer ()
     {
-        return hornSize;
+        return favoriteBeer;
     }
     
-    private void setHornSize (float hornSize)
+    private void setFavoriteBeer (String nameBeer)
     {
-        this.hornSize = hornSize;
+        this.favoriteBeer = nameBeer;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return "Tauren : \t" + getName() + "\nHornSize : \t" + getHornSize() + "\nWeapons : \t" + getWeapons();
+        return super.toString() + "\tFavoriteBeer : \t" + getFavoriteBeer() + "\n";
     }
+    
 }
-
