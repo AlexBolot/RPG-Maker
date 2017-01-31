@@ -10,7 +10,7 @@ import TP7.Factories.WeaponFactory;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 22:39
+ . Last Modified : 31/01/17 17:41
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -43,5 +43,20 @@ public class Human extends Personnage
     public String toString ()
     {
         return super.toString() + "\tEyeColor : \t" + getEyeColor() + "\n";
+    }
+    
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    public boolean equals (Object obj)
+    {
+        if(obj == null) return false;
+        if(!(obj instanceof Human)) return false;
+        
+        Human humanCompare = (Human) obj;
+        
+        Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
+        Boolean sameColor = this.getEyeColor().equalsIgnoreCase(humanCompare.getEyeColor());
+        
+        return sameName && sameColor && super.equals(obj);
     }
 }

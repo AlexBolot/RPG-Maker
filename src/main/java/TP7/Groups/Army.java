@@ -11,7 +11,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 01:19
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -22,13 +22,15 @@ public class Army extends Group
     private Personnage general;
     private ArrayList<Battalion> battalions = new ArrayList<>();
     
-    public Army (Personnage general)
+    public Army (String name, Personnage general)
     {
+        setName(name);
         this.general = general;
     }
     
     public Army (Army army)
     {
+        setName(army.getName());
         getBattalions().addAll(army.getBattalions());
     }
     

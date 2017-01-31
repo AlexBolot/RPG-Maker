@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 01:02
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -36,7 +36,7 @@ public class TrollTest
     @Test
     public void ToString () throws Exception
     {
-        assertEquals("Troll : \tThrugal\tWeapons : \t[ager : power = 20.0, protection = 10.0]\tFavoriteBeer : \tKwak\n",
+        assertEquals("Troll : \tThrugal\tWeapons : \t[Dager : power = 20.0, protection = 10.0]\tFavoriteBeer : \tKwak\n",
                      troll.toString());
     }
 }

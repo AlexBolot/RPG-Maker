@@ -11,7 +11,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 22:39
+ . Last Modified : 31/01/17 17:44
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -106,6 +106,18 @@ public abstract class Personnage
     {
         String className = this.getClass().toString().substring(22);
         return className + " : \t" + getName() + "\tWeapons : \t" + getWeapons();
+    }
+    
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    public boolean equals (Object obj)
+    {
+        if(obj == null) return false;
+        if(!(obj instanceof Personnage)) return false;
+        
+        Personnage persoCompare = (Personnage) obj;
+        
+        return persoCompare.getName().equalsIgnoreCase(this.getName());
     }
 }
 

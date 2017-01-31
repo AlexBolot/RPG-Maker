@@ -10,7 +10,7 @@ import TP7.Factories.WeaponFactory;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 22:39
+ . Last Modified : 31/01/17 17:41
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -43,6 +43,21 @@ public class Tauren extends Personnage
     public String toString ()
     {
         return super.toString() + "\tHornSize : \t" + getHornSize() + "\n";
+    }
+    
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    public boolean equals (Object obj)
+    {
+        if(obj == null) return false;
+        if(!(obj instanceof Tauren)) return false;
+        
+        Tauren humanCompare = (Tauren) obj;
+        
+        Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
+        Boolean sameHornSize = this.getHornSize() == humanCompare.getHornSize();
+        
+        return sameName && sameHornSize && super.equals(obj);
     }
 }
 

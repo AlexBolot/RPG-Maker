@@ -7,7 +7,7 @@ package TP7.Weapons;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 00:56
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -43,7 +43,7 @@ public abstract class Weapon
     @Override
     public String toString ()
     {
-        String className = this.getClass().toString().substring(19);
+        String className = this.getClass().toString().substring(18);
         return className + " : power = " + getPower() + ", protection = " + getProtection();
     }
 }

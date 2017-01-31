@@ -13,7 +13,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 00:52
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -23,21 +23,24 @@ public class Horde extends Group
 {
     private ArrayList<Personnage> soldiers = new ArrayList<>();
     
-    public Horde (Personnage personnage)
+    public Horde (String name, Personnage personnage)
     {
+        setName(name);
         getSoldiers().add(personnage);
     }
     
-    public Horde (PersonnageType type, int amount, String argument)
+    public Horde (String name, PersonnageType type, int amount, String argument)
     {
+        setName(name);
         for (int i = 0; i < amount; i++)
         {
             addSoldier(new PersonnageFactory().createPersonnage(type, type.toString().toLowerCase() + i, argument));
         }
     }
     
-    public Horde (PersonnageType type, int amount, float argument)
+    public Horde (String name, PersonnageType type, int amount, float argument)
     {
+        setName(name);
         for (int i = 0; i < amount; i++)
         {
             addSoldier(new PersonnageFactory().createPersonnage(type, type.toString().toLowerCase() + i, argument));
@@ -46,6 +49,7 @@ public class Horde extends Group
     
     public Horde (Horde horde)
     {
+        setName(horde.getName());
         getSoldiers().addAll(horde.getSoldiers());
     }
     

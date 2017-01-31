@@ -10,7 +10,7 @@ import TP7.Factories.WeaponFactory;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 22:39
+ . Last Modified : 31/01/17 17:41
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -43,6 +43,21 @@ public class Orc extends Personnage
     public String toString ()
     {
         return super.toString() + "\tEarSize : \t" + getEarSize() + "\n";
+    }
+    
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    public boolean equals (Object obj)
+    {
+        if(obj == null) return false;
+        if(!(obj instanceof Orc)) return false;
+        
+        Orc humanCompare = (Orc) obj;
+        
+        Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
+        Boolean sameEarSize = this.getEarSize() == humanCompare.getEarSize();
+        
+        return sameName && sameEarSize && super.equals(obj);
     }
 }
 

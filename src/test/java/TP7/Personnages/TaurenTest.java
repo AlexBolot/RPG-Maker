@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 01:01
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -46,7 +46,7 @@ public class TaurenTest
     @Test
     public void ToString () throws Exception
     {
-        assertEquals("Tauren : 	Powaeesha	Weapons : 	[hield : power = 5.0, protection = 20.0]	HornSize : 	" + hornSize + "\n",
+        assertEquals("Tauren : 	Powaeesha	Weapons : 	[Shield : power = 5.0, protection = 20.0]	HornSize : 	" + hornSize + "\n",
                      tauren.toString());
     }
 }

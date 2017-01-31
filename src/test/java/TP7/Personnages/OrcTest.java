@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 00:59
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -46,7 +46,7 @@ public class OrcTest
     @Test
     public void ToString () throws Exception
     {
-        assertEquals("Orc : \tThrugal\tWeapons : \t[word : power = 25.0, protection = 5.0]\tEarSize : \t" + earSize + "\n",
+        assertEquals("Orc : \tThrugal\tWeapons : \t[Sword : power = 25.0, protection = 5.0]\tEarSize : \t" + earSize + "\n",
                      orc.toString());
     }
 }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 01:18
+ . Last Modified : 31/01/17 19:49
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -24,9 +24,9 @@ public class App
 {
     public static void main (String[] args)
     {
-        Battalion battalion1 = new Battalion(PersonnageType.HUMAN, 2, "Bleu");
-        Battalion battalion2 = new Battalion(PersonnageType.TROLL, 1, "1664");
-        Battalion battalion3 = new Battalion(PersonnageType.TAUREN, 3, 4.5f);
+        Battalion battalion1 = new Battalion("battalion1", PersonnageType.HUMAN, 2, "Bleu");
+        Battalion battalion2 = new Battalion("battalion1", PersonnageType.TROLL, 1, "1664");
+        Battalion battalion3 = new Battalion("battalion1", PersonnageType.TAUREN, 3, 4.5f);
     
         Personnage general1 = new Human("Napoleon", "Marron");
     
@@ -35,7 +35,7 @@ public class App
         battalions.add(battalion2);
         battalions.add(battalion3);
     
-        Army army = new Army(general1);
+        Army army = new Army("General1", general1);
         army.addBattalion(battalions);
     
         System.out.println(army);

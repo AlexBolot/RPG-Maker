@@ -10,7 +10,7 @@ import TP7.Personnages.Personnage;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 00:52
+ . Last Modified : 31/01/17 15:21
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -18,27 +18,27 @@ import TP7.Personnages.Personnage;
 @SuppressWarnings("unused")
 public class Battalion extends Horde
 {
-    public Battalion (Personnage personnage)
+    public Battalion (String name, Personnage personnage)
     {
-        super(personnage);
+        super(name, personnage);
     }
     
-    public Battalion (PersonnageType type, int amount, String argument)
+    public Battalion (String name, PersonnageType type, int amount, String argument)
     {
-        super(type, amount, argument);
+        super(name, type, amount, argument);
     }
     
-    public Battalion (PersonnageType type, int amount, float argument)
+    public Battalion (String name, PersonnageType type, int amount, float argument)
     {
-        super(type, amount, argument);
+        super(name, type, amount, argument);
     }
     
-    public Battalion (Battalion battalion)
+    public Battalion (String name, Battalion battalion)
     {
         super(battalion);
     }
     
-    public Battalion (Horde horde)
+    public Battalion (String name, Horde horde)
     {
         super(horde);
     }
