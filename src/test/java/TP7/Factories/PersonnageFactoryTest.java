@@ -2,9 +2,15 @@ package TP7.Factories;
 
 import TP7.Factories.Types.PersonnageType;
 import TP7.Personnages.Human;
+import TP7.Personnages.Orc;
+import TP7.Personnages.Tauren;
+import TP7.Personnages.Troll;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+
+
+
 
 /*................................................................................................................................
  . Copyright (c)
@@ -27,12 +33,10 @@ public class PersonnageFactoryTest
     {
 
         assertEquals(PersonnageFactory.createPersonnage(PersonnageType.HUMAN, "Daniel", "bleu"),new Human("Daniel", "bleu"));
+        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.ORC, "Rag", 6),new Orc("Rag", 6));
+        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.TAUREN, "Adren", 10),new Tauren("Adren", 10));
+        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.TROLL, "Bloom", "Skoll"),new Troll("Bloom", "Skoll"));
     }
-    
-    @Test
-    public void createPersonnage1 () throws Exception
-    {
-        
-    }
+
     
 }

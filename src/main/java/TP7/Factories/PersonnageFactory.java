@@ -33,7 +33,7 @@ public class PersonnageFactory
         return null;
     }
     
-    public Personnage createPersonnage (PersonnageType personnageType, String name, float argument)
+    public static Personnage createPersonnage(PersonnageType personnageType, String name, float argument)
     {
         /*if(name != null && !name.isEmpty())
         {
