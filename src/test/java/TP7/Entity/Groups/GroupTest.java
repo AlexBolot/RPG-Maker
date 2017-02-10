@@ -1,18 +1,27 @@
-package TP7.Factories.Types;
+package TP7.Entity.Groups;
+
+import org.junit.Test;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The WeaponType	 Class was Coded by :
+ . The GroupTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 11/02/17 00:12
+ . Last Modified : 11/02/17 00:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public enum WeaponType
+public class GroupTest
 {
-    SWORD, DAGER, SHIELD
+    //TODO
+    
+    @Test
+    public void getName () throws Exception
+    {
+        
+    }
+    
 }

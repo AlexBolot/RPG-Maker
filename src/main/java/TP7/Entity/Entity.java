@@ -1,34 +1,20 @@
-package TP7.Groups;
+package TP7.Entity;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Group	 Class was Coded by :
+ . The Entity	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 15:21
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public abstract class Group
+public abstract class Entity
 {
-    private String name;
-    
-    public String getName ()
-    {
-        return name;
-    }
-    
-    protected void setName (String name)
-    {
-        this.name = name;
-    }
-    
     public abstract float getPower ();
     
     public abstract float getProtection ();
-    
-    public abstract String toString ();
 }

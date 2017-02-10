@@ -1,7 +1,6 @@
-package TP7.Groups;
+package TP7.Entity.Groups;
 
-import TP7.Factories.Types.PersonnageType;
-import TP7.Personnages.Personnage;
+import TP7.Entity.Entity;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -10,7 +9,7 @@ import TP7.Personnages.Personnage;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 15:21
+ . Last Modified : 11/02/17 00:48
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -18,40 +17,24 @@ import TP7.Personnages.Personnage;
 @SuppressWarnings("unused")
 public class Battalion extends Horde
 {
-    public Battalion (String name, Personnage personnage)
+    public Battalion (String name)
     {
-        super(name, personnage);
+        super(name);
     }
     
-    public Battalion (String name, PersonnageType type, int amount, String argument)
-    {
-        super(name, type, amount, argument);
-    }
-    
-    public Battalion (String name, PersonnageType type, int amount, float argument)
-    {
-        super(name, type, amount, argument);
-    }
-    
-    public Battalion (String name, Battalion battalion)
-    {
-        super(battalion);
-    }
-    
-    public Battalion (String name, Horde horde)
+    public Battalion (Horde horde)
     {
         super(horde);
     }
-    
     //region Getters and Setters
     @Override
     public float getPower ()
     {
         float hordePower = 0;
-        
-        for (Personnage p : getSoldiers())
+    
+        for (Entity e : getSoldiers())
         {
-            hordePower += p.getPower();
+            hordePower += e.getPower();
         }
         
         return hordePower * 1.5f;
@@ -61,13 +44,13 @@ public class Battalion extends Horde
     public float getProtection ()
     {
         float hordeProtection = 0;
-        
-        for (Personnage p : getSoldiers())
+    
+        for (Entity e : getSoldiers())
         {
-            hordeProtection += p.getProtection();
+            hordeProtection += e.getProtection();
         }
-        
-        return hordeProtection * 1.55f;
+    
+        return hordeProtection * 1.5f;
     }
     //endregion
     

@@ -1,49 +1,51 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
 
+import static TP7.Factories.Types.HandType.RIGHT;
+
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Human	 Class was Coded by :
+ . The Tauren	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 17:41
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Human extends Personnage
+public class Tauren extends Personnage
 {
-    private String eyeColor;
+    private float hornSize;
     
-    public Human (String Name, String EyeColor)
+    public Tauren (String Name, float HornSize)
     {
         setName(Name);
-        setEyeColor(EyeColor);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
-        setPrice(10);
+        setHornSize(HornSize);
+        addWeapon(RIGHT, new WeaponFactory().createWeapon(WeaponType.SHIELD));
+        setPrice(2);
     }
     
     //region Getters and Setters
-    public String getEyeColor ()
+    public float getHornSize ()
     {
-        return eyeColor;
+        return hornSize;
     }
     
-    private void setEyeColor (String eyeColor)
+    private void setHornSize (float hornSize)
     {
-        this.eyeColor = eyeColor;
+        this.hornSize = hornSize;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return super.toString() + "\tEyeColor : \t" + getEyeColor() + "\n";
+        return super.toString() + "\tHornSize : \t" + getHornSize() + "\n";
     }
     
     @SuppressWarnings("ConstantConditions")
@@ -51,13 +53,14 @@ public class Human extends Personnage
     public boolean equals (Object obj)
     {
         if(obj == null) return false;
-        if(!(obj instanceof Human)) return false;
+        if(!(obj instanceof Tauren)) return false;
         
-        Human humanCompare = (Human) obj;
+        Tauren humanCompare = (Tauren) obj;
         
         Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
-        Boolean sameColor = this.getEyeColor().equalsIgnoreCase(humanCompare.getEyeColor());
+        Boolean sameHornSize = this.getHornSize() == humanCompare.getHornSize();
         
-        return sameName && sameColor && super.equals(obj);
+        return sameName && sameHornSize && super.equals(obj);
     }
 }
+

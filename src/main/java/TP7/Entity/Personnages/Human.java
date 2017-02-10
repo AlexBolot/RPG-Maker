@@ -1,49 +1,51 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
 
+import static TP7.Factories.Types.HandType.RIGHT;
+
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Troll	 Class was Coded by :
+ . The Human	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 17:41
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Troll extends Personnage
+public class Human extends Personnage
 {
-    private String favoriteBeer;
+    private String eyeColor;
     
-    public Troll (String Name, String NameBeer)
+    public Human (String Name, String EyeColor)
     {
         setName(Name);
-        setFavoriteBeer(NameBeer);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.DAGER));
-        setPrice(5);
+        setEyeColor(EyeColor);
+        addWeapon(RIGHT, new WeaponFactory().createWeapon(WeaponType.SWORD));
+        setPrice(10);
     }
     
     //region Getters and Setters
-    public String getFavoriteBeer ()
+    public String getEyeColor ()
     {
-        return favoriteBeer;
+        return eyeColor;
     }
     
-    private void setFavoriteBeer (String nameBeer)
+    private void setEyeColor (String eyeColor)
     {
-        this.favoriteBeer = nameBeer;
+        this.eyeColor = eyeColor;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return super.toString() + "\tFavoriteBeer : \t" + getFavoriteBeer() + "\n";
+        return super.toString() + "\tEyeColor : \t" + getEyeColor() + "\n";
     }
     
     @SuppressWarnings("ConstantConditions")
@@ -51,14 +53,13 @@ public class Troll extends Personnage
     public boolean equals (Object obj)
     {
         if(obj == null) return false;
-        if(!(obj instanceof Troll)) return false;
+        if(!(obj instanceof Human)) return false;
         
-        Troll humanCompare = (Troll) obj;
+        Human humanCompare = (Human) obj;
         
         Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
-        Boolean sameBeer = this.getFavoriteBeer().equalsIgnoreCase(humanCompare.getFavoriteBeer());
+        Boolean sameColor = this.getEyeColor().equalsIgnoreCase(humanCompare.getEyeColor());
         
-        return sameName && sameBeer && super.equals(obj);
+        return sameName && sameColor && super.equals(obj);
     }
-    
 }

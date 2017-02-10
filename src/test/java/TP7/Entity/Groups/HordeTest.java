@@ -1,4 +1,4 @@
-package TP7.Groups;
+package TP7.Entity.Groups;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 10/02/17 17:32
+ . Last Modified : 11/02/17 00:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/

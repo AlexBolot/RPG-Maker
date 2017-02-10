@@ -1,16 +1,17 @@
 package TP7.Player;
 
-import TP7.Factories.Types.PersonnageType;
-import TP7.Groups.Army;
-import TP7.Groups.Battalion;
-import TP7.Groups.Horde;
-import TP7.Personnages.Human;
-import TP7.Personnages.Personnage;
-import TP7.Personnages.Troll;
+import TP7.Entity.Groups.Army;
+import TP7.Entity.Groups.Battalion;
+import TP7.Entity.Groups.Group;
+import TP7.Entity.Personnages.Human;
+import TP7.Entity.Personnages.Personnage;
+import TP7.Entity.Personnages.Troll;
+import TP7.Factories.GroupFactory;
+import TP7.Factories.PersonnageFactory;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
+import static TP7.Factories.Types.GroupType.BATTALION;
+import static TP7.Factories.Types.PersonnageType.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -21,190 +22,82 @@ import static org.junit.Assert.assertTrue;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 16:19
+ . Last Modified : 11/02/17 00:48
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class PlayerTest
 {
-    private Player player = new Player("Player1", 500);
-
+    private Player player = new Player("Player1", 5000);
+    
     @Test
     public void getName () throws Exception
     {
         assertEquals("Player1", player.getName());
     }
-
+    
+    @Test
+    public void Player () throws Exception
+    {
+        Player player2 = new Player(player);
+        
+        assertEquals(player, player2);
+    }
+    
     @Test
     public void getMoneyCount () throws Exception
     {
-        assertEquals(500, player.getMoneyCount(), 0.001);
+        assertEquals(5000, player.getMoneyCount(), 0.001);
     }
-
+    
     @Test
     public void pay () throws Exception
     {
         player.pay(50);
-
-        assertEquals(450, player.getMoneyCount(), 0.001);
-
+    
+        assertEquals(4950, player.getMoneyCount(), 0.001);
+        
         player.pay(45);
-
-        assertEquals(405, player.getMoneyCount(), 0.001);
+    
+        assertEquals(4905, player.getMoneyCount(), 0.001);
     }
-
+    
     @Test
-    public void getPersonnages () throws Exception
+    public void addEntities () throws Exception
     {
-        player.addPersonnage(new Human("human1", "bleu"));
-        player.addPersonnage(new Troll("troll1", "1664"));
-        player.addPersonnage(new Human("human2", "gris"));
-
-        assertEquals(3, player.getPersonnages().size());
+        Personnage p1 = PersonnageFactory.createPersonnage(HUMAN, "human1", "bleu", player);
+        Personnage p2 = PersonnageFactory.createPersonnage(TROLL, "troll1", "1664", player);
+        Personnage p3 = PersonnageFactory.createPersonnage(HUMAN, "human2", "gris", player);
+        Army g1 = GroupFactory.createArmy("army1", TAUREN, "Pawndo", 10.4f, player);
+        Group g2 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
+    
+        g1.addBattalion((Battalion) g2);
+    
+        player.addEntities(p1, p2, p3, g1);
+    
+        assertEquals(4, player.getEntities().size());
     }
-
+    
     @Test
-    public void getHordes () throws Exception
+    public void getEntities () throws Exception
     {
-        Horde horde1 = new Horde("horde1", PersonnageType.ORC, 5, 7.5f);
-        Horde horde2 = new Horde("horde2", PersonnageType.HUMAN, 2, "vert");
-        Horde horde3 = new Horde("horde3", PersonnageType.TAUREN, 3, 12.4f);
-
-        player.addHorde(horde1);
-
-        assertEquals(1, player.getHordes().size());
-
-        player.addHorde(horde2);
-        player.addHorde(horde3);
-
-        assertEquals(3, player.getHordes().size());
+        player.addEntities(new Human("human1", "bleu"));
+        player.addEntities(new Troll("troll1", "1664"));
+        player.addEntities(new Human("human2", "gris"));
+    
+        assertEquals(3, player.getEntities().size());
     }
-
-    @Test
-    public void getBattalions () throws Exception
-    {
-        Battalion battalion1 = new Battalion("battalion1", PersonnageType.ORC, 5, 7.5f);
-        Battalion battalion2 = new Battalion("battalion2", PersonnageType.HUMAN, 2, "vert");
-        Battalion battalion3 = new Battalion("battalion3", PersonnageType.TAUREN, 3, 12.4f);
-
-        player.addBattalion(battalion1);
-
-        assertEquals(1, player.getBattalions().size());
-
-        player.addBattalion(battalion2);
-        player.addBattalion(battalion3);
-
-        assertEquals(3, player.getBattalions().size());
-    }
-
-    @Test
-    public void getArmies () throws Exception
-    {
-        Army army1 = new Army("army1", new Human("human1", "bleu"));
-        Army army2 = new Army("army2", new Troll("troll1", "1664"));
-        Army army3 = new Army("army3", new Human("human2", "gris"));
-
-        player.addArmy(army1);
-
-        assertEquals(1, player.getArmies().size());
-
-        player.addArmy(army2);
-        player.addArmy(army3);
-
-        assertEquals(3, player.getArmies().size());
-    }
-
-    @Test
-    public void addPersonnage () throws Exception
-    {
-        Personnage p1 = new Human("human1", "bleu");
-        Personnage p2 = new Troll("troll1", "1664");
-        Personnage p3 = new Human("human2", "gris");
-
-        player.addPersonnage(p1,p2,p3);
-
-        assertEquals(3, player.getPersonnages().size());
-    }
-
-    @Test
-    public void addPersonnage1 () throws Exception
-    {
-        player.addPersonnage(new Human("human1", "bleu"));
-        player.addPersonnage(new Troll("troll1", "1664"));
-        player.addPersonnage(new Human("human2", "gris"));
-
-        assertEquals(3, player.getPersonnages().size());
-    }
-
-    @Test
-    public void addHorde () throws Exception
-    {
-        player.addHorde(new Horde("horde1", PersonnageType.ORC, 5, 7.5f),new Horde("horde2", PersonnageType.TAUREN, 5, 11.7f),new Horde("horde3", PersonnageType.ORC, 5, 7.5f));
-        assertEquals(3, player.getHordes().size());
-    }
-
-    @Test
-    public void addHorde1 () throws Exception
-    {
-        player.addHorde(new Horde("horde1", PersonnageType.ORC, 5, 7.5f));
-        player.addHorde(new Horde("horde2", PersonnageType.TAUREN, 5, 11.7f));
-        player.addHorde(new Horde("horde3", PersonnageType.ORC, 5, 7.5f));
-
-        assertEquals(3, player.getHordes().size());
-    }
-
-    @Test
-    public void addBattalion () throws Exception
-    {
-
-        player.addBattalion(new Battalion("battalion1", PersonnageType.ORC, 5, 7.5f),new Battalion("battalion2", PersonnageType.TAUREN, 5, 11.7f),new Battalion("battalion3", PersonnageType.ORC, 5, 7.5f));
-
-        assertEquals(3, player.getBattalions().size());
-    }
-
-    @Test
-    public void addBattalion1 () throws Exception
-    {
-        player.addBattalion(new Battalion("battalion1", PersonnageType.ORC, 5, 7.5f));
-        player.addBattalion(new Battalion("battalion2", PersonnageType.TAUREN, 5, 11.7f));
-        player.addBattalion(new Battalion("battalion3", PersonnageType.ORC, 5, 7.5f));
-
-        assertEquals(3, player.getBattalions().size());
-    }
-
-    @Test
-    public void addArmie () throws Exception
-    {
-        Army army1 = new Army("army1", new Human("human1", "bleu"));
-        Army army2 = new Army("army2", new Troll("troll1", "1664"));
-        Army army3 = new Army("army3", new Human("human2", "gris"));
-
-        player.addArmy(army1);
-        player.addArmy(army2);
-        player.addArmy(army3);
-
-        assertEquals(3, player.getArmies().size());
-    }
-
-    @Test
-    public void addArmie1 () throws Exception
-    {
-
-        player.addArmy(new Army("army1", new Human("human1", "bleu")),new Army("army2", new Troll("troll1", "1664")),new Army("army3", new Human("human2", "gris")));
-
-        assertEquals(3, player.getArmies().size());
-    }
-
+    
     @Test
     public void equals () throws Exception
     {
         Player p1 = new Player("Player1", 500);
         Player p2 = new Player("Player1", 400);
         Player p3 = new Player(p1);
-
+    
         assertTrue(p1.equals(p2));
-        assertTrue(p1.equals(p2));
+        assertTrue(p1.equals(p3));
     }
-
+    
 }

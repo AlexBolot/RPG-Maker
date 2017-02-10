@@ -1,49 +1,51 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
 
+import static TP7.Factories.Types.HandType.RIGHT;
+
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Tauren	 Class was Coded by :
+ . The Orc	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 17:41
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Tauren extends Personnage
+public class Orc extends Personnage
 {
-    private float hornSize;
+    private float earSize;
     
-    public Tauren (String Name, float HornSize)
+    public Orc (String Name, float EarSize)
     {
         setName(Name);
-        setHornSize(HornSize);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.SHIELD));
-        setPrice(2);
+        setEarSize(EarSize);
+        addWeapon(RIGHT, new WeaponFactory().createWeapon(WeaponType.SWORD));
+        setPrice(10);
     }
     
     //region Getters and Setters
-    public float getHornSize ()
+    public float getEarSize ()
     {
-        return hornSize;
+        return earSize;
     }
     
-    private void setHornSize (float hornSize)
+    private void setEarSize (float earSize)
     {
-        this.hornSize = hornSize;
+        this.earSize = earSize;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return super.toString() + "\tHornSize : \t" + getHornSize() + "\n";
+        return super.toString() + "\tEarSize : \t" + getEarSize() + "\n";
     }
     
     @SuppressWarnings("ConstantConditions")
@@ -51,14 +53,14 @@ public class Tauren extends Personnage
     public boolean equals (Object obj)
     {
         if(obj == null) return false;
-        if(!(obj instanceof Tauren)) return false;
+        if(!(obj instanceof Orc)) return false;
         
-        Tauren humanCompare = (Tauren) obj;
+        Orc humanCompare = (Orc) obj;
         
         Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
-        Boolean sameHornSize = this.getHornSize() == humanCompare.getHornSize();
+        Boolean sameEarSize = this.getEarSize() == humanCompare.getEarSize();
         
-        return sameName && sameHornSize && super.equals(obj);
+        return sameName && sameEarSize && super.equals(obj);
     }
 }
 

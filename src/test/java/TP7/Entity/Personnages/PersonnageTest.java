@@ -1,10 +1,11 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
 import TP7.Weapons.Shield;
 import org.junit.Test;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+import static TP7.Factories.Types.HandType.LEFT;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertTrue;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 21:32
+ . Last Modified : 11/02/17 00:48
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -37,15 +38,15 @@ public class PersonnageTest
     @Test
     public void addWeapon () throws Exception
     {
-        human.addWeapon(new Shield());
+        human.addWeapon(LEFT, new Shield());
         assertTrue(human.getWeapons().size() == 2);
     }
     
     @Test
     public void dropWeapon () throws Exception
     {
-        human.addWeapon(new Shield());
-        human.dropWeapon(1);
+        human.addWeapon(LEFT, new Shield());
+        human.dropWeapon(LEFT);
         assertTrue(human.getWeapons().size() == 1);
     }
     

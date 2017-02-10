@@ -1,13 +1,14 @@
 package TP7;
 
-import TP7.Personnages.Orc;
-import TP7.Personnages.Tauren;
-import TP7.Personnages.Troll;
+import TP7.Entity.Personnages.Orc;
+import TP7.Entity.Personnages.Tauren;
+import TP7.Entity.Personnages.Troll;
 import TP7.Weapons.Improvements.BuffedWeapon;
 import TP7.Weapons.Improvements.EnchantedWeapon;
 import TP7.Weapons.Weapon;
 import org.junit.Test;
 
+import static TP7.Factories.Types.HandType.RIGHT;
 import static org.junit.Assert.assertEquals;
 
 /*................................................................................................................................
@@ -17,7 +18,7 @@ import static org.junit.Assert.assertEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 10/02/17 17:44
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -68,8 +69,8 @@ public class ScenarioTest
         // Diablon enchants his weapon with EnchantedWeapon coef 2.
         // Diablon's weapon's power : 10.
         // Diablon's total power : 10 * 0.95 = 9.5 (due to his vitality).
-        Weapon weaponDiablon = new EnchantedWeapon(diablon.getWeapon(0), 2);
-        diablon.replaceWeapon(0, weaponDiablon);
+        Weapon weaponDiablon = new EnchantedWeapon(diablon.getWeapon(RIGHT), 2);
+        diablon.replaceWeapon(RIGHT, weaponDiablon);
         
         diablon.Attack(azag);
         
@@ -80,8 +81,8 @@ public class ScenarioTest
         // Diablon enchants his weapon with BuffedWeapon coef 3.
         // Diablon's weapon's power : 13.
         // Diablon's total power : 13 * 0.95 = 12.3 (due to his vitality).
-        weaponDiablon = new BuffedWeapon(diablon.getWeapon(0), 3);
-        diablon.replaceWeapon(0, weaponDiablon);
+        weaponDiablon = new BuffedWeapon(diablon.getWeapon(RIGHT), 3);
+        diablon.replaceWeapon(RIGHT, weaponDiablon);
         
         diablon.Attack(azag);
         

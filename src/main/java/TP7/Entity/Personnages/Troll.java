@@ -1,49 +1,51 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
 import TP7.Factories.Types.WeaponType;
 import TP7.Factories.WeaponFactory;
 
+import static TP7.Factories.Types.HandType.RIGHT;
+
 /*................................................................................................................................
  . Copyright (c)
  .
- . The Orc	 Class was Coded by :
+ . The Troll	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 17:41
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings("WeakerAccess")
-public class Orc extends Personnage
+public class Troll extends Personnage
 {
-    private float earSize;
+    private String favoriteBeer;
     
-    public Orc (String Name, float EarSize)
+    public Troll (String Name, String NameBeer)
     {
         setName(Name);
-        setEarSize(EarSize);
-        addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
-        setPrice(10);
+        setFavoriteBeer(NameBeer);
+        addWeapon(RIGHT, new WeaponFactory().createWeapon(WeaponType.DAGER));
+        setPrice(5);
     }
     
     //region Getters and Setters
-    public float getEarSize ()
+    public String getFavoriteBeer ()
     {
-        return earSize;
+        return favoriteBeer;
     }
     
-    private void setEarSize (float earSize)
+    private void setFavoriteBeer (String nameBeer)
     {
-        this.earSize = earSize;
+        this.favoriteBeer = nameBeer;
     }
     //endregion
     
     @Override
     public String toString ()
     {
-        return super.toString() + "\tEarSize : \t" + getEarSize() + "\n";
+        return super.toString() + "\tFavoriteBeer : \t" + getFavoriteBeer() + "\n";
     }
     
     @SuppressWarnings("ConstantConditions")
@@ -51,14 +53,14 @@ public class Orc extends Personnage
     public boolean equals (Object obj)
     {
         if(obj == null) return false;
-        if(!(obj instanceof Orc)) return false;
+        if(!(obj instanceof Troll)) return false;
         
-        Orc humanCompare = (Orc) obj;
+        Troll humanCompare = (Troll) obj;
         
         Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
-        Boolean sameEarSize = this.getEarSize() == humanCompare.getEarSize();
+        Boolean sameBeer = this.getFavoriteBeer().equalsIgnoreCase(humanCompare.getFavoriteBeer());
         
-        return sameName && sameEarSize && super.equals(obj);
+        return sameName && sameBeer && super.equals(obj);
     }
+    
 }
-

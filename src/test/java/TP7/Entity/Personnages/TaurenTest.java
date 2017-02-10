@@ -1,4 +1,4 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotEquals;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 15:21
+ . Last Modified : 11/02/17 00:41
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -46,7 +46,7 @@ public class TaurenTest
     @Test
     public void ToString () throws Exception
     {
-        assertEquals("Tauren : 	Powaeesha	Weapons : 	[Shield : power = 5.0, protection = 20.0]	HornSize : 	" + hornSize + "\n",
+        assertEquals("Tauren : \tPowaeesha\tWeapons : \t{RIGHT=Shield : power = 5.0, protection = 20.0}\tHornSize : \t" + hornSize + "\n",
                      tauren.toString());
     }
 }

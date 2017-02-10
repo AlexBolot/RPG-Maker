@@ -1,8 +1,13 @@
-package TP7.Personnages;
+package TP7.Entity.Personnages;
 
+import TP7.Entity.Entity;
+import TP7.Factories.Types.HandType;
 import TP7.Weapons.Weapon;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+
+import static TP7.Factories.Types.HandType.LEFT;
+import static TP7.Factories.Types.HandType.RIGHT;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -11,43 +16,43 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 10/02/17 18:04
+ . Last Modified : 11/02/17 00:48
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 @SuppressWarnings({"WeakerAccess", "SameParameterValue"})
-public abstract class Personnage
+public abstract class Personnage extends Entity
 {
     private int price;
-    private ArrayList<Weapon> weapons = new ArrayList<>();
+    private HashMap<HandType, Weapon> weapons = new HashMap<>();
     private String name;
     private float vitality = 100;
     
     //region Getters and Setters
-    public void addWeapon (Weapon newWeapon)
+    public void addWeapon (HandType hand, Weapon newWeapon)
     {
-        if(getWeapons().size() < 2) getWeapons().add(newWeapon);
+        if(!getWeapons().containsKey(hand)) weapons.put(hand, newWeapon);
     }
     
-    protected void dropWeapon (int index)
+    public void dropWeapon (HandType hand)
     {
-        if(getWeapons().size() > index) getWeapons().remove(index);
+        if(weapons.containsKey(hand)) getWeapons().remove(hand);
     }
     
-    public void replaceWeapon (int index, Weapon newWeapon)
+    public void replaceWeapon (HandType hand, Weapon newWeapon)
     {
-        getWeapons().remove(index);
-        addWeapon(newWeapon);
+        getWeapons().remove(hand);
+        addWeapon(hand, newWeapon);
     }
     
-    public Weapon getWeapon (int index)
+    public Weapon getWeapon (HandType hand)
     {
-        if(getWeapons().size() > index) return getWeapons().get(index);
+        if(getWeapons().containsKey(hand)) return getWeapons().get(hand);
         return null;
     }
     
-    public ArrayList<Weapon> getWeapons ()
+    public HashMap<HandType, Weapon> getWeapons ()
     {
         return weapons;
     }
@@ -84,14 +89,39 @@ public abstract class Personnage
     
     public float getPower ()
     {
-        float tempPower = getWeapons().get(0).getPower() * (getVitality() / 100f);
-        
+        HandType attackingHand;
+    
+        if(getWeapons().containsKey(LEFT))
+        {
+            float rightHandPower = getWeapon(RIGHT).getPower();
+            float leftHandPower = getWeapon(LEFT).getPower();
+            attackingHand = rightHandPower < leftHandPower ? LEFT : RIGHT;
+        }
+        else
+        {
+            attackingHand = RIGHT;
+        }
+    
+        float tempPower = getWeapons().get(attackingHand).getPower() * (getVitality() / 100f);
         return Math.round(tempPower * 10f) / 10f;
     }
     
     public float getProtection ()
     {
-        float tempProtection = getWeapons().get(0).getProtection() * (getVitality() / 100f);
+        HandType defendingHand;
+    
+        if(getWeapons().containsKey(LEFT))
+        {
+            float rightHandPotection = getWeapon(RIGHT).getProtection();
+            float leftHandPotection = getWeapon(LEFT).getProtection();
+            defendingHand = rightHandPotection < leftHandPotection ? LEFT : RIGHT;
+        }
+        else
+        {
+            defendingHand = RIGHT;
+        }
+    
+        float tempProtection = getWeapons().get(defendingHand).getProtection() * (getVitality() / 100f);
         return Math.round(tempProtection * 10f) / 10f;
     }
     //endregion
@@ -115,7 +145,7 @@ public abstract class Personnage
     @Override
     public String toString ()
     {
-        String className = this.getClass().toString().substring(22);
+        String className = this.getClass().toString().substring(29);
         return className + " : \t" + getName() + "\tWeapons : \t" + getWeapons();
     }
     

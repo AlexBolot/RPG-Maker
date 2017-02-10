@@ -1,41 +1,21 @@
-package TP7.Groups;
+package TP7.Entity;
 
 import org.junit.Test;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The BattalionTest	 Class was Coded by :
+ . The EntityTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 10/02/17 17:32
+ . Last Modified : 11/02/17 00:24
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class BattalionTest
+public class EntityTest
 {
-    //TODO
-    
-    @Test
-    public void getSoldiers () throws Exception
-    {
-        
-    }
-    
-    @Test
-    public void addSoldier () throws Exception
-    {
-        
-    }
-    
-    @Test
-    public void addSoldier1 () throws Exception
-    {
-        
-    }
-    
     @Test
     public void getPower () throws Exception
     {
@@ -44,12 +24,6 @@ public class BattalionTest
     
     @Test
     public void getProtection () throws Exception
-    {
-        
-    }
-    
-    @Test
-    public void ToString () throws Exception
     {
         
     }

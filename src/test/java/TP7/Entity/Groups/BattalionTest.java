@@ -1,55 +1,55 @@
-package TP7.Factories;
+package TP7.Entity.Groups;
 
 import org.junit.Test;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The ArmyFactoryTest	 Class was Coded by :
+ . The BattalionTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 11/02/17 00:12
+ . Last Modified : 11/02/17 00:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class ArmyFactoryTest
+public class BattalionTest
 {
     //TODO
     
     @Test
-    public void create () throws Exception
+    public void getSoldiers () throws Exception
     {
         
     }
     
     @Test
-    public void create1 () throws Exception
+    public void addSoldier () throws Exception
     {
         
     }
     
     @Test
-    public void creatGroup () throws Exception
+    public void addSoldier1 () throws Exception
     {
         
     }
     
     @Test
-    public void creatGroup1 () throws Exception
+    public void getPower () throws Exception
     {
         
     }
     
     @Test
-    public void creatGroup2 () throws Exception
+    public void getProtection () throws Exception
     {
         
     }
     
     @Test
-    public void creatGroup3 () throws Exception
+    public void ToString () throws Exception
     {
         
     }

@@ -1,8 +1,9 @@
-package TP7.Groups;
+package TP7.Entity.Groups;
 
-import TP7.Personnages.Personnage;
+import TP7.Entity.Personnages.Personnage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 15:21
+ . Last Modified : 11/02/17 00:32
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -45,14 +46,9 @@ public class Army extends Group
         return battalions;
     }
     
-    public void addBattalion (Battalion battalion)
+    public void addBattalion (Battalion... battalions)
     {
-        getBattalions().add(battalion);
-    }
-    
-    public void addBattalion (ArrayList<Battalion> battalions)
-    {
-        getBattalions().addAll(battalions);
+        Collections.addAll(getBattalions(), battalions);
     }
     
     @Override

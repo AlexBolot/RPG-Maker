@@ -1,27 +1,18 @@
-package TP7.Groups;
-
-import org.junit.Test;
+package TP7.Factories.Types;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The GroupTest	 Class was Coded by :
+ . The HandType	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 10/02/17 17:32
+ . Last Modified : 11/02/17 00:12
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class GroupTest
+public enum HandType
 {
-    //TODO
-    
-    @Test
-    public void getName () throws Exception
-    {
-        
-    }
-    
+    RIGHT, LEFT
 }
