@@ -1,6 +1,10 @@
 package TP7.Factories;
 
+import TP7.Factories.Types.PersonnageType;
+import TP7.Personnages.Human;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -21,7 +25,8 @@ public class PersonnageFactoryTest
     @Test
     public void createPersonnage () throws Exception
     {
-        
+
+        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.HUMAN, "Daniel", "bleu"),new Human("Daniel", "bleu"));
     }
     
     @Test
