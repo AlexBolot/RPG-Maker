@@ -6,6 +6,7 @@ import TP7.Groups.Horde;
 import TP7.Personnages.Personnage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 15:51
+ . Last Modified : 10/02/17 17:43
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -85,47 +86,27 @@ public class Player
     {
         return armies;
     }
-    
-    public void addPersonnage (Personnage personnages)
-    {
-        getPersonnages().add(personnages);
-    }
-    
-    public void addPersonnage (ArrayList<Personnage> personnages)
-    {
-        getPersonnages().addAll(personnages);
-    }
-    
-    public void addHorde (Horde hordes)
-    {
-        getHordes().add(hordes);
-    }
-    
-    public void addHorde (ArrayList<Horde> hordes)
-    {
-        getHordes().addAll(hordes);
-    }
-    
-    public void addBattalion (Battalion battalions)
-    {
-        getBattalions().add(battalions);
-    }
-    
-    public void addBattalion (ArrayList<Battalion> battalions)
-    {
-        getBattalions().addAll(battalions);
-    }
-    
-    public void addArmy (Army armies)
-    {
-        getArmies().add(armies);
-    }
-    
-    public void addArmy (ArrayList<Army> armies)
-    {
-        getArmies().addAll(armies);
-    }
     //endregion
+    
+    public void addPersonnage (Personnage... personnages)
+    {
+        Collections.addAll(getPersonnages(), personnages);
+    }
+    
+    public void addHorde (Horde... hordes)
+    {
+        Collections.addAll(getHordes(), hordes);
+    }
+    
+    public void addBattalion (Battalion... battalions)
+    {
+        Collections.addAll(getBattalions(), battalions);
+    }
+    
+    public void addArmy (Army... armies)
+    {
+        Collections.addAll(getArmies(), armies);
+    }
     
     @Override
     public boolean equals (Object obj)

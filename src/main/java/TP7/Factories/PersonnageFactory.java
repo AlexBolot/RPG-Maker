@@ -1,7 +1,7 @@
 package TP7.Factories;
 
 import TP7.Factories.Types.PersonnageType;
-import TP7.Personnages.*;
+import TP7.Personnages.Personnage;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -10,16 +10,16 @@ import TP7.Personnages.*;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 30/01/17 22:05
+ . Last Modified : 10/02/17 17:44
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 public class PersonnageFactory
 {
-    public Personnage createPersonnage (PersonnageType personnageType, String name, String argument)
+    public Personnage createPersonnage (PersonnageType personnageType, String name, Object argument)
     {
-        if(name != null && !name.isEmpty() && argument != null)
+        /*if(name != null && !name.isEmpty() && argument != null)
         {
             switch (personnageType)
             {
@@ -29,13 +29,13 @@ public class PersonnageFactory
                 case TROLL:
                     return new Troll(name, argument);
             }
-        }
+        }*/
         return null;
     }
     
     public Personnage createPersonnage (PersonnageType personnageType, String name, float argument)
     {
-        if(name != null && !name.isEmpty())
+        /*if(name != null && !name.isEmpty())
         {
             switch (personnageType)
             {
@@ -45,7 +45,7 @@ public class PersonnageFactory
                 case TAUREN:
                     return new Tauren(name, argument);
             }
-        }
+        }*/
         return null;
     }
 }

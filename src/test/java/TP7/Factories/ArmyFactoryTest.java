@@ -1,11 +1,11 @@
-package TP7.Groups;
+package TP7.Factories;
 
 import org.junit.Test;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The HordeTest	 Class was Coded by :
+ . The ArmyFactoryTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
@@ -14,42 +14,42 @@ import org.junit.Test;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class HordeTest
+public class ArmyFactoryTest
 {
     //TODO
     
     @Test
-    public void getSoldiers () throws Exception
+    public void create () throws Exception
     {
         
     }
     
     @Test
-    public void addSoldier () throws Exception
+    public void create1 () throws Exception
     {
         
     }
     
     @Test
-    public void addSoldier1 () throws Exception
+    public void creatGroup () throws Exception
     {
         
     }
     
     @Test
-    public void getPower () throws Exception
+    public void creatGroup1 () throws Exception
     {
         
     }
     
     @Test
-    public void getProtection () throws Exception
+    public void creatGroup2 () throws Exception
     {
         
     }
     
     @Test
-    public void ToString () throws Exception
+    public void creatGroup3 () throws Exception
     {
         
     }

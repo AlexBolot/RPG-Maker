@@ -5,7 +5,7 @@ import org.junit.Test;
 /*................................................................................................................................
  . Copyright (c)
  .
- . The HordeTest	 Class was Coded by :
+ . The BattalionTest	 Class was Coded by :
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
@@ -14,7 +14,7 @@ import org.junit.Test;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class HordeTest
+public class BattalionTest
 {
     //TODO
     
