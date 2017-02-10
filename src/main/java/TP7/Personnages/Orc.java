@@ -25,6 +25,7 @@ public class Orc extends Personnage
         setName(Name);
         setEarSize(EarSize);
         addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
+        setPrice(10);
     }
     
     //region Getters and Setters

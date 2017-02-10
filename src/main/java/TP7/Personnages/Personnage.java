@@ -19,6 +19,7 @@ import java.util.ArrayList;
 @SuppressWarnings({"WeakerAccess", "SameParameterValue"})
 public abstract class Personnage
 {
+    private int price;
     private ArrayList<Weapon> weapons = new ArrayList<>();
     private String name;
     private float vitality = 100;
@@ -70,7 +71,15 @@ public abstract class Personnage
     {
         this.vitality = vitality;
     }
-    
+
+    public int getPrice() {
+        return price;
+    }
+
+    protected void setPrice(int price) {
+        this.price = price;
+    }
+
     public float getPower ()
     {
         float tempPower = getWeapons().get(0).getPower() * (getVitality() / 100f);

@@ -25,6 +25,7 @@ public class Troll extends Personnage
         setName(Name);
         setFavoriteBeer(NameBeer);
         addWeapon(new WeaponFactory().createWeapon(WeaponType.DAGER));
+        setPrice(5);
     }
     
     //region Getters and Setters

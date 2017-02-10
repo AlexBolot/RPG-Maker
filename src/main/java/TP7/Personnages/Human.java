@@ -25,6 +25,7 @@ public class Human extends Personnage
         setName(Name);
         setEyeColor(EyeColor);
         addWeapon(new WeaponFactory().createWeapon(WeaponType.SWORD));
+        setPrice(10);
     }
     
     //region Getters and Setters

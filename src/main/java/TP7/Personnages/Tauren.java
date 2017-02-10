@@ -25,6 +25,7 @@ public class Tauren extends Personnage
         setName(Name);
         setHornSize(HornSize);
         addWeapon(new WeaponFactory().createWeapon(WeaponType.SHIELD));
+        setPrice(2);
     }
     
     //region Getters and Setters
