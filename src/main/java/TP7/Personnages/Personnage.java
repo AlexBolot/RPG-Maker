@@ -11,7 +11,7 @@ import java.util.ArrayList;
  . -> Alexandre BOLOT
  . -> Christopher SABOYA
  .
- . Last Modified : 31/01/17 17:44
+ . Last Modified : 10/02/17 18:04
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
@@ -71,15 +71,17 @@ public abstract class Personnage
     {
         this.vitality = vitality;
     }
-
-    public int getPrice() {
+    
+    public int getPrice ()
+    {
         return price;
     }
-
-    protected void setPrice(int price) {
+    
+    protected void setPrice (int price)
+    {
         this.price = price;
     }
-
+    
     public float getPower ()
     {
         float tempPower = getWeapons().get(0).getPower() * (getVitality() / 100f);
