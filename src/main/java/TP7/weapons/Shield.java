@@ -1,19 +1,20 @@
-package TP7;
+package TP7.weapons;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The App	 Class was Coded by : Alexandre BOLOT
+ . The Shield	 Class was Coded by : Alexandre BOLOT
  .
  . Last Modified : 05/03/17 18:54
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class App
+public class Shield extends Weapon
 {
-    public static void main (String[] args)
+    public Shield ()
     {
-    
+        setPower(5);
+        setProtection(20);
     }
 }

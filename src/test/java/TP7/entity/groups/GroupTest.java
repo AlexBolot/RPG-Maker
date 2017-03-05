@@ -1,19 +1,25 @@
-package TP7;
+package TP7.entity.groups;
+
+import org.junit.Test;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The App	 Class was Coded by : Alexandre BOLOT
+ . The GroupTest	 Class was Coded by : Alexandre BOLOT
  .
  . Last Modified : 05/03/17 18:54
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class App
+public class GroupTest
 {
-    public static void main (String[] args)
-    {
+    //TODO
     
+    @Test
+    public void getName () throws Exception
+    {
+        
     }
+    
 }

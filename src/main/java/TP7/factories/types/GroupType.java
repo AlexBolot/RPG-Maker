@@ -1,19 +1,16 @@
-package TP7;
+package TP7.factories.types;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The App	 Class was Coded by : Alexandre BOLOT
+ . The GroupType	 Class was Coded by : Alexandre BOLOT
  .
  . Last Modified : 05/03/17 18:54
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class App
+public enum GroupType
 {
-    public static void main (String[] args)
-    {
-    
-    }
+    ARMY, HORDE, BATTALION
 }

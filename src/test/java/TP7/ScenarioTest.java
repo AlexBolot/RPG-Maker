@@ -1,24 +1,22 @@
 package TP7;
 
-import TP7.Entity.Personnages.Orc;
-import TP7.Entity.Personnages.Tauren;
-import TP7.Entity.Personnages.Troll;
-import TP7.Weapons.Improvements.BuffedWeapon;
-import TP7.Weapons.Improvements.EnchantedWeapon;
-import TP7.Weapons.Weapon;
+import TP7.entity.personnages.Orc;
+import TP7.entity.personnages.Tauren;
+import TP7.entity.personnages.Troll;
+import TP7.weapons.Weapon;
+import TP7.weapons.improvements.BuffedWeapon;
+import TP7.weapons.improvements.EnchantedWeapon;
 import org.junit.Test;
 
-import static TP7.Factories.Types.HandType.RIGHT;
+import static TP7.factories.types.HandType.RIGHT;
 import static org.junit.Assert.assertEquals;
 
 /*................................................................................................................................
  . Copyright (c)
  .
- . The ScenarioTest	 Class was Coded by :
- . -> Alexandre BOLOT
- . -> Christopher SABOYA
+ . The ScenarioTest	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 11/02/17 00:12
+ . Last Modified : 05/03/17 18:57
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
