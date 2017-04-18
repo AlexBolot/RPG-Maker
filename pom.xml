@@ -1,12 +1,12 @@
-<!--
-  ~ Copyright (c)
-  ~
-  ~ The pom.xml	 Class was Coded by : Alexandre BOLOT
-  ~
-  ~ Last Modified : 05/03/17 18:56
-  ~
-  ~ Contact : bolotalex06@gmail.com
-  -->
+<!--..............................................................................................................................
+  . Copyright (c)
+  .
+  . The pom.xml	 Class was Coded by : Alexandre BOLOT
+  .
+  . Last Modified : 18/04/17 18:01
+  .
+  . Contact : bolotalex06@gmail.com
+  .............................................................................................................................-->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,8 +21,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
