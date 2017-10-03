@@ -5,13 +5,29 @@ package TP7.weapons;
  .
  . The Dager	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 04/10/17 00:56
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
+/**
+ <h2>Class representing a dager</h2>
+
+ <h3>Attributes :</h3>
+ —> The attributes are inherited<br>
+ —> See the {@link Weapon Weapon} class
+
+ <h3>Constructor :</h3>
+ —> The constructor has no parameters<br>
+ —> It sets [power] = 20 and [protection] = 10
+ */
 public class Dager extends Weapon
 {
+    /**
+     <h3>Default constructor :</h3>
+     —> sets [power] = 20<br>
+     —> sets [protection] = 10
+     */
     public Dager ()
     {
         setPower(20);
