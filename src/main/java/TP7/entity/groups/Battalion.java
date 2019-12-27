@@ -7,54 +7,46 @@ import TP7.entity.Entity;
  .
  . The Battalion	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-@SuppressWarnings("unused")
-public class Battalion extends Horde
-{
-    public Battalion (String name)
-    {
+public class Battalion extends Horde {
+    public Battalion(String name) {
         super(name);
     }
-    
-    public Battalion (Horde horde)
-    {
+
+    public Battalion(Horde horde) {
         super(horde);
     }
+
     //region Getters and Setters
     @Override
-    public float getPower ()
-    {
+    public float getPower() {
         float hordePower = 0;
-    
-        for (Entity e : getSoldiers())
-        {
+
+        for (Entity e : getSoldiers()) {
             hordePower += e.getPower();
         }
-        
+
         return hordePower * 1.5f;
     }
-    
+
     @Override
-    public float getProtection ()
-    {
+    public float getProtection() {
         float hordeProtection = 0;
-    
-        for (Entity e : getSoldiers())
-        {
+
+        for (Entity e : getSoldiers()) {
             hordeProtection += e.getProtection();
         }
-    
+
         return hordeProtection * 1.5f;
     }
     //endregion
-    
+
     @Override
-    public String toString ()
-    {
+    public String toString() {
         return super.toString();
     }
 }

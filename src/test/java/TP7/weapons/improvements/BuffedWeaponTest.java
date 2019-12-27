@@ -13,37 +13,34 @@ import static org.junit.Assert.assertEquals;
  .
  . The BuffedWeaponTest	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class BuffedWeaponTest
-{
-    private final float  delta  = 0.001f;
-    private       Weapon dager  = new Dager();
-    private       Weapon sword  = new Sword();
-    private       Weapon shield = new Shield();
-    
+public class BuffedWeaponTest {
+    private final float delta = 0.001f;
+    private Weapon dager = new Dager();
+    private Weapon sword = new Sword();
+    private Weapon shield = new Shield();
+
     @Test
-    public void getPower () throws Exception
-    {
+    public void getPower() throws Exception {
         dager = new BuffedWeapon(dager, 2);
         sword = new BuffedWeapon(sword, 2);
         shield = new BuffedWeapon(shield, 2);
-        
+
         assertEquals(22, dager.getPower(), delta);
         assertEquals(27, sword.getPower(), delta);
         assertEquals(7, shield.getPower(), delta);
     }
-    
+
     @Test
-    public void getProtection () throws Exception
-    {
+    public void getProtection() throws Exception {
         dager = new BuffedWeapon(dager, 2);
         sword = new BuffedWeapon(sword, 2);
         shield = new BuffedWeapon(shield, 2);
-        
+
         assertEquals(12, dager.getProtection(), delta);
         assertEquals(7, sword.getProtection(), delta);
         assertEquals(22, shield.getProtection(), delta);

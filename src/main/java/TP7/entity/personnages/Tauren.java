@@ -10,54 +10,46 @@ import static TP7.factories.types.HandType.RIGHT;
  .
  . The Tauren	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:57
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-@SuppressWarnings("WeakerAccess")
-public class Tauren extends Personnage
-{
+public class Tauren extends Character {
     private float hornSize;
-    
-    public Tauren (String Name, float HornSize)
-    {
+
+    public Tauren(String Name, float HornSize) {
         setName(Name);
         setHornSize(HornSize);
         addWeapon(RIGHT, new WeaponFactory().createWeapon(WeaponType.SHIELD));
         setPrice(2);
     }
-    
+
     //region Getters and Setters
-    public float getHornSize ()
-    {
+    public float getHornSize() {
         return hornSize;
     }
-    
-    private void setHornSize (float hornSize)
-    {
+
+    private void setHornSize(float hornSize) {
         this.hornSize = hornSize;
     }
     //endregion
-    
+
     @Override
-    public String toString ()
-    {
+    public String toString() {
         return super.toString() + "\tHornSize : \t" + getHornSize() + "\n";
     }
-    
-    @SuppressWarnings("ConstantConditions")
+
     @Override
-    public boolean equals (Object obj)
-    {
-        if(obj == null) return false;
-        if(!(obj instanceof Tauren)) return false;
-        
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (!(obj instanceof Tauren)) return false;
+
         Tauren humanCompare = (Tauren) obj;
-        
-        Boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
-        Boolean sameHornSize = this.getHornSize() == humanCompare.getHornSize();
-        
+
+        boolean sameName = this.getName().equalsIgnoreCase(humanCompare.getName());
+        boolean sameHornSize = this.getHornSize() == humanCompare.getHornSize();
+
         return sameName && sameHornSize && super.equals(obj);
     }
 }

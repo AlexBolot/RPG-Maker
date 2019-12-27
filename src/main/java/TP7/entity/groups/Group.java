@@ -7,28 +7,25 @@ import TP7.entity.Entity;
  .
  . The Group	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public abstract class Group extends Entity
-{
+public abstract class Group extends Entity {
     private String name;
-    
-    public String getName ()
-    {
+
+    public String getName() {
         return name;
     }
-    
-    protected void setName (String name)
-    {
+
+    protected void setName(String name) {
         this.name = name;
     }
-    
-    public abstract float getPower ();
-    
-    public abstract float getProtection ();
-    
-    public abstract String toString ();
+
+    public abstract float getPower();
+
+    public abstract float getProtection();
+
+    public abstract String toString();
 }

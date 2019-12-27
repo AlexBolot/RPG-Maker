@@ -15,74 +15,56 @@ import static org.junit.Assert.assertEquals;
  .
  . The ArmyTest	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:57
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class ArmyTest
-{
+public class ArmyTest {
     private Army army = new Army("army", new Human("general1", "bleu"));
-    
+
     @Test
-    public void getGeneral () throws Exception
-    {
+    public void getGeneral() {
         assertEquals(new Human("general1", "bleu"), army.getGeneral());
     }
-    
+
     @Test
-    public void getBattalions () throws Exception
-    {
+    public void getBattalions() {
         Player player = new Player("player1", 5000);
-    
+
         TP7.entity.groups.Group g1 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
         TP7.entity.groups.Group g2 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
         TP7.entity.groups.Group g3 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
-        
+
         army.addBattalion((Battalion) g1, (Battalion) g2, (Battalion) g3);
-        
+
         assertEquals(3, army.getBattalions().size());
     }
-    
+
     @Test
-    public void addBattalion () throws Exception
-    {
+    public void addBattalion() {
         Player player = new Player("player1", 5000);
-    
+
         TP7.entity.groups.Group g1 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
         TP7.entity.groups.Group g2 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
         TP7.entity.groups.Group g3 = GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
-        
+
         army.addBattalion((Battalion) g1, (Battalion) g2, (Battalion) g3);
-        
+
         assertEquals(3, army.getBattalions().size());
     }
-    
-    
+
+
     @Test
-    public void getPower () throws Exception
-    {
+    public void getPower() {
         Player player = new Player("player1", 5000);
-        
+
         Battalion b1 = (Battalion) GroupFactory.creatGroup(BATTALION, "group1", ORC, 5, 10.4f, player);
         Battalion b2 = (Battalion) GroupFactory.creatGroup(BATTALION, "group1", TAUREN, 5, 10.4f, player);
         Battalion b3 = (Battalion) GroupFactory.creatGroup(BATTALION, "group1", ORC, 5, 10.4f, player);
-        
+
         army.addBattalion(b1, b2, b3);
-        
+
         assertEquals(437.5f, army.getPower(), 0.001f);
     }
-    
-    @Test
-    public void getProtection () throws Exception
-    {
-        
-    }
-    
-    @Test
-    public void ToString () throws Exception
-    {
-        
-    }
-    
 }

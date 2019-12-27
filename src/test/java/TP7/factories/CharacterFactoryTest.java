@@ -9,31 +9,23 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-
-
-
 /*................................................................................................................................
  . Copyright (c)
  .
- . The PersonnageFactoryTest	 Class was Coded by : Alexandre BOLOT
+ . The CharacterFactoryTest	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class PersonnageFactoryTest
-{
-    //TODO
-    
+public class CharacterFactoryTest {
+
     @Test
-    public void createPersonnage () throws Exception
-    {
-        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.HUMAN, "Daniel", "bleu"),new Human("Daniel", "bleu"));
+    public void createPersonnage() {
+        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.HUMAN, "Daniel", "bleu"), new Human("Daniel", "bleu"));
         assertEquals(PersonnageFactory.createPersonnage(PersonnageType.ORC, "Rag", 6f), new Orc("Rag", 6f));
         assertEquals(PersonnageFactory.createPersonnage(PersonnageType.TAUREN, "Adren", 10f), new Tauren("Adren", 10f));
-        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.TROLL, "Bloom", "Skoll"),new Troll("Bloom", "Skoll"));
+        assertEquals(PersonnageFactory.createPersonnage(PersonnageType.TROLL, "Bloom", "Skoll"), new Troll("Bloom", "Skoll"));
     }
-
-    
 }

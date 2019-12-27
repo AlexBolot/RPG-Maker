@@ -10,30 +10,26 @@ import static org.junit.Assert.assertNotEquals;
  .
  . The TrollTest	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class TrollTest
-{
+public class TrollTest {
     private Troll troll = new Troll("Thrugal", "Kwak");
-    
+
     @Test   //Test if the FavoriteBeer is Bleu. => True
-    public void getFavoriteBeer1 () throws Exception
-    {
+    public void getFavoriteBeer1() {
         assertEquals("Kwak", troll.getFavoriteBeer());
     }
-    
+
     @Test   //Test if the FavoriteBeer is Marron. => False
-    public void getFavoriteBeer2 () throws Exception
-    {
+    public void getFavoriteBeer2() {
         assertNotEquals("1664", troll.getFavoriteBeer());
     }
-    
+
     @Test
-    public void ToString () throws Exception
-    {
+    public void ToString() {
         assertEquals(
                 "Troll : \tThrugal\tweapons : \t{RIGHT=Dager : power = 20.0, protection = 10.0}\tFavoriteBeer : \tKwak\n",
                 troll.toString());

@@ -5,31 +5,30 @@ package TP7.weapons;
  .
  . The Shield	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 04/10/17 00:55
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 /**
- <h2>Class representing a shield</h2>
-
- <h3>Attributes :</h3>
- —> The attributes are inherited<br>
- —> See the {@link Weapon Weapon} class
-
- <h3>Constructor :</h3>
- —> The constructor has no parameters<br>
- —> It sets [power] = 5 and [protection] = 20
+ * <h2>Class representing a shield</h2>
+ *
+ * <h3>Attributes :</h3>
+ * —> The attributes are inherited<br>
+ * —> See the {@link Weapon Weapon} class
+ *
+ * <h3>Constructor :</h3>
+ * —> The constructor has no parameters<br>
+ * —> Sets [power] = 5<br>
+ * —> Sets [protection] = 20
  */
-public class Shield extends Weapon
-{
+public class Shield extends Weapon {
     /**
-     <h3>Default constructor :</h3>
-     —> sets [power] = 5<br>
-     —> sets [protection] = 20
+     * <h3>Default constructor :</h3>
+     * —> Sets [power] = 5<br>
+     * —> Sets [protection] = 20
      */
-    public Shield ()
-    {
+    public Shield() {
         setPower(5);
         setProtection(20);
     }

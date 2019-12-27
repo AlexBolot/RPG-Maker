@@ -12,39 +12,34 @@ import static org.junit.Assert.assertNotEquals;
  .
  . The TaurenTest	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class TaurenTest
-{
-    private final float  hornSize = generateHornSize();
-    private       Tauren tauren   = new Tauren("Powaeesha", hornSize);
-    
-    private float generateHornSize ()
-    {
+public class TaurenTest {
+    private final float hornSize = generateHornSize();
+    private Tauren tauren = new Tauren("Powaeesha", hornSize);
+
+    private float generateHornSize() {
         //We set the HornSize random between 200mm and 700mm
         int randInt = ThreadLocalRandom.current().nextInt(200, 700);
         return randInt / 100;
     }
-    
+
     @Test   //Test if the HornSize is hornSize. => True
-    public void getHornSize1 () throws Exception
-    {
+    public void getHornSize1() {
         assertEquals(hornSize, tauren.getHornSize(), 0.001);
     }
-    
+
     @Test   //Test if the HornSize is (hornSize - 1). => False
-    public void getHornSize2 () throws Exception
-    {
+    public void getHornSize2() {
         assertNotEquals(hornSize - 1, tauren.getHornSize(), 0.001);
     }
-    
+
     @Test
-    public void ToString () throws Exception
-    {
+    public void ToString() {
         assertEquals("Tauren : \tPowaeesha\tweapons : \t{RIGHT=Shield : power = 5.0, protection = 20.0}\tHornSize : \t" + hornSize + "\n",
-                     tauren.toString());
+                tauren.toString());
     }
 }

@@ -18,36 +18,33 @@ import static TP7.factories.types.HandType.RIGHT;
  .
  . The Character	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 07/10/17 02:15
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
 /**
- <h2>Abstract class representing a Character</h2>
-
- <h3>Attributes :</h3>
- —> <i>name</i> : Name of the chatacter<br>
- —> <i>price</i> : Cost of the character<br>
- —> <i>vitality</i> : Health points of the character<br>
- —> <i>weapons {HandType, Weapon}</i> : Weapons held by the character<br>
-
- <h3>Noticable methods :</h3>
- —> <i>attack</i> : Makes the current character attack another character<br>
- —> Other methods are for adding, droping, getting and setting weapons, vitality, etc.
+ * <h2>Abstract class representing a Character</h2>
+ *
+ * <h3>Attributes :</h3>
+ * —> <i>name</i> : Name of the chatacter<br>
+ * —> <i>price</i> : Cost of the character<br>
+ * —> <i>vitality</i> : Health points of the character<br>
+ * —> <i>weapons {HandType, Weapon}</i> : Weapons held by the character<br>
+ *
+ * <h3>Noticable methods :</h3>
+ * —> <i>attack</i> : Makes the current character attack another character<br>
+ * —> Other methods are for adding, droping, getting and setting weapons, vitality, etc.
  */
-@SuppressWarnings ({"WeakerAccess"})
-public abstract class Character extends Entity
-{
+public abstract class Character extends Entity {
     private String name;
-    private int    price;
+    private int price;
     private float vitality = 100;
 
     private HashMap<HandType, Weapon> weapons = new HashMap<>();
 
     //region Getters and Setters
-    public void addWeapon (HandType hand, Weapon newWeapon) throws IllegalArgumentException
-    {
+    public void addWeapon(HandType hand, Weapon newWeapon) throws IllegalArgumentException {
         assertParamsNotNull(hand, newWeapon);
         assertNotEmpty(getWeapons(), "Character's weapon list");
         if (getWeapons().containsKey(hand)) throw new KeyAlreadyExistsException("Key " + hand + " already exists");
@@ -55,8 +52,7 @@ public abstract class Character extends Entity
         getWeapons().put(hand, newWeapon);
     }
 
-    public void dropWeapon (HandType hand) throws IllegalArgumentException
-    {
+    public void dropWeapon(HandType hand) throws IllegalArgumentException {
         assertParamsNotNull(hand);
         assertNotEmpty(getWeapons(), "Character's weapon list");
         if (!getWeapons().containsKey(hand)) throw new InvalidKeyException("Key " + hand + " doesn't exists");
@@ -64,8 +60,7 @@ public abstract class Character extends Entity
         if (weapons.containsKey(hand)) getWeapons().remove(hand);
     }
 
-    public void replaceWeapon (HandType hand, Weapon newWeapon) throws IllegalArgumentException
-    {
+    public void replaceWeapon(HandType hand, Weapon newWeapon) throws IllegalArgumentException {
         assertParamsNotNull(hand, newWeapon);
         assertNotEmpty(getWeapons(), "Character's weapon list");
         if (!getWeapons().containsKey(hand)) throw new InvalidKeyException("Key " + hand + " doesn't exists");
@@ -74,8 +69,7 @@ public abstract class Character extends Entity
         addWeapon(hand, newWeapon);
     }
 
-    public Weapon getWeapon (HandType hand) throws IllegalArgumentException
-    {
+    public Weapon getWeapon(HandType hand) throws IllegalArgumentException {
         assertParamsNotNull(hand);
         assertNotEmpty(getWeapons(), "Character's weapon list");
         if (!getWeapons().containsKey(hand)) throw new InvalidKeyException("Key " + hand + " doesn't exists");
@@ -83,55 +77,44 @@ public abstract class Character extends Entity
         return getWeapons().get(hand);
     }
 
-    public HashMap<HandType, Weapon> getWeapons ()
-    {
+    public HashMap<HandType, Weapon> getWeapons() {
         return weapons;
     }
 
-    public String getName ()
-    {
+    public String getName() {
         return name;
     }
 
-    protected void setName (String name)
-    {
+    protected void setName(String name) {
         this.name = name;
     }
 
-    public float getVitality ()
-    {
+    public float getVitality() {
         return vitality;
     }
 
-    private void setVitality (float vitality)
-    {
+    private void setVitality(float vitality) {
         this.vitality = vitality;
     }
 
-    public int getPrice ()
-    {
+    public int getPrice() {
         return price;
     }
 
-    protected void setPrice (int price)
-    {
+    protected void setPrice(int price) {
         this.price = price;
     }
 
-    public float getPower () throws IllegalArgumentException
-    {
+    public float getPower() throws IllegalArgumentException {
         assertNotEmpty(getWeapons(), "Character's weapon list");
 
         HandType attackingHand;
 
-        if (getWeapons().containsKey(LEFT))
-        {
+        if (getWeapons().containsKey(LEFT)) {
             float rightHandPower = getWeapon(RIGHT).getPower();
             float leftHandPower = getWeapon(LEFT).getPower();
             attackingHand = rightHandPower < leftHandPower ? LEFT : RIGHT;
-        }
-        else
-        {
+        } else {
             attackingHand = RIGHT;
         }
 
@@ -139,20 +122,16 @@ public abstract class Character extends Entity
         return Math.round(tempPower * 10f) / 10f;
     }
 
-    public float getProtection () throws IllegalArgumentException
-    {
+    public float getProtection() throws IllegalArgumentException {
         assertNotEmpty(getWeapons(), "Character's weapon list");
 
         HandType defendingHand;
 
-        if (getWeapons().containsKey(LEFT))
-        {
+        if (getWeapons().containsKey(LEFT)) {
             float rightHandPotection = getWeapon(RIGHT).getProtection();
             float leftHandPotection = getWeapon(LEFT).getProtection();
             defendingHand = rightHandPotection < leftHandPotection ? LEFT : RIGHT;
-        }
-        else
-        {
+        } else {
             defendingHand = RIGHT;
         }
 
@@ -162,15 +141,14 @@ public abstract class Character extends Entity
     //endregion
 
     /**
-     <h2>Makes the current character attack another character</h2>
-
-     <b>Effect :</b><br>
-     [target].vitality = [target].protection - this.power
-
-     @param target The character to attack.
+     * <h2>Makes the current character attack another character</h2>
+     *
+     * <b>Effect :</b><br>
+     * [target].vitality = [target].protection - this.power
+     *
+     * @param target The character to attack.
      */
-    public void attack (Character target) throws IllegalArgumentException
-    {
+    public void attack(Character target) throws IllegalArgumentException {
         assertParamsNotNull(target);
 
         float damageDealt;
@@ -181,16 +159,14 @@ public abstract class Character extends Entity
     }
 
     @Override
-    public String toString ()
-    {
+    public String toString() {
         String className = this.getClass().toString().substring(29);
         return className + " : \t" + getName() + "\tweapons : \t" + getWeapons();
     }
 
     @Override
-    public boolean equals (Object obj)
-    {
-        if (obj == null || !(obj instanceof Character)) return false;
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Character)) return false;
 
         Character persoCompare = (Character) obj;
 

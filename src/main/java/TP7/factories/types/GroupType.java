@@ -5,12 +5,11 @@ package TP7.factories.types;
  .
  . The GroupType	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public enum GroupType
-{
+public enum GroupType {
     ARMY, HORDE, BATTALION
 }

@@ -10,74 +10,62 @@ import java.util.Collections;
  .
  . The Horde	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-@SuppressWarnings({"WeakerAccess", "unused"})
-public class Horde extends Group
-{
+public class Horde extends Group {
     private ArrayList<Entity> entities = new ArrayList<>();
-    
-    public Horde (String name)
-    {
+
+    public Horde(String name) {
         setName(name);
     }
-    
-    public Horde (Horde horde)
-    {
+
+    public Horde(Horde horde) {
         setName(horde.getName());
         getSoldiers().addAll(horde.getSoldiers());
     }
-    
+
     //region Getters and Setters
-    public ArrayList<Entity> getSoldiers ()
-    {
+    public ArrayList<Entity> getSoldiers() {
         return entities;
     }
-    
-    public void addSoldiers (Entity... entities)
-    {
+
+    public void addSoldiers(Entity... entities) {
         Collections.addAll(getSoldiers(), entities);
     }
-    
+
     @Override
-    public float getPower ()
-    {
+    public float getPower() {
         float hordePower = 0;
-        
-        for (Entity e : getSoldiers())
-        {
+
+        for (Entity e : getSoldiers()) {
             hordePower += e.getPower();
         }
-        
+
         return hordePower * 0.75f;
     }
-    
+
     @Override
-    public float getProtection ()
-    {
+    public float getProtection() {
         float hordeProtection = 0;
-        
-        for (Entity e : getSoldiers())
-        {
+
+        for (Entity e : getSoldiers()) {
             hordeProtection += e.getProtection();
         }
-        
+
         return hordeProtection * 0.75f;
     }
     //endregion
-    
+
     @Override
-    public String toString ()
-    {
-        String soldiersList = "";
-        for (Entity e : getSoldiers())
-        {
-            soldiersList += "\t\t" + e;
+    public String toString() {
+        StringBuilder soldiersList = new StringBuilder();
+        for (Entity e : getSoldiers()) {
+            soldiersList.append("\t\t").append(e);
         }
-        
+
         String className = this.getClass().toString().substring(17);
         return className + " :\n\tSoldiers :\n" + soldiersList;
     }

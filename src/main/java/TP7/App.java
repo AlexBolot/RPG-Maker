@@ -5,15 +5,13 @@ package TP7;
  .
  . The App	 Class was Coded by : Alexandre BOLOT
  .
- . Last Modified : 05/03/17 18:54
+ . Last Modified : 27/12/2019 18:36
  .
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class App
-{
-    public static void main (String[] args)
-    {
-    
+public class App {
+    public static void main(String[] args) {
+
     }
 }
